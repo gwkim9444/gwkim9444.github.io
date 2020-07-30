@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.1.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-07-30T12:59:01+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Groot Robot Blog</title><subtitle>Node 개발과 ROS/ROS2를 프로젝트에 적용중인 Developer</subtitle><author><name>Kim Gi Wang(Dale Kim)</name></author><entry><title type="html">ROS1과 ROS2의 차이</title><link href="http://localhost:4000/ros1-ros2/" rel="alternate" type="text/html" title="ROS1과 ROS2의 차이" /><published>2020-07-30T00:00:00+09:00</published><updated>2020-07-30T00:00:00+09:00</updated><id>http://localhost:4000/ros1-ros2</id><content type="html" xml:base="http://localhost:4000/ros1-ros2/">&lt;h1 id=&quot;ros1-과-ros2의-차이-그리고-개념정리&quot;&gt;ROS1 과 ROS2의 차이 그리고 개념정리&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.1.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-07-30T13:06:50+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Groot Robot Blog</title><subtitle>Node 개발과 ROS/ROS2를 프로젝트에 적용중인 Developer</subtitle><author><name>Kim Gi Wang(Dale Kim)</name></author><entry><title type="html">ROS1과 ROS2의 차이</title><link href="http://localhost:4000/ros1-ros2/" rel="alternate" type="text/html" title="ROS1과 ROS2의 차이" /><published>2020-07-30T00:00:00+09:00</published><updated>2020-07-30T00:00:00+09:00</updated><id>http://localhost:4000/ros1-ros2</id><content type="html" xml:base="http://localhost:4000/ros1-ros2/">&lt;h1 id=&quot;ros1-과-ros2의-차이-그리고-개념정리&quot;&gt;ROS1 과 ROS2의 차이 그리고 개념정리&lt;/h1&gt;
 &lt;hr /&gt;
 &lt;h2 id=&quot;목-차&quot;&gt;목 차&lt;/h2&gt;
 
@@ -176,7 +176,7 @@ DDS 개념은 네트워크프로그래밍 영역이라 ROS 자체에서 뭔가 �
 
 &lt;p&gt;&lt;strong&gt;3. rcl 은 무엇인가?&lt;/strong&gt;&lt;/p&gt;
 
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;rcl(ROS Client library)는 C 라이브러 공간,시간,로깅 등 ROS의 기본기능을 제공한다.
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;rcl(ROS Client library)는 C 라이브러리로 공간,시간,로깅 등 ROS의 기본기능을 제공한다.
 또한 rcl 위에 각종 언어를 지원하도록 인터페이스를 지원하며 rclcpp, rclpy, rcljava 등으로 ROS2 클라이언트 라이브러리로 지원하고있다.
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
@@ -184,6 +184,8 @@ DDS 개념은 네트워크프로그래밍 영역이라 ROS 자체에서 뭔가 �
 
 &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;다양한 언어로 생성된 node 들을 실행 하기위해 ROS2 에 지원하는 기능으로 각종 언어를 활용해 노드를 실행 할 수있도록 돕는 rcl 들이다.
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;각 계층별로 통신이 진행되는 시나리오를 말씀드리자면 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;UDP&lt;/code&gt;로 올라온 물리신호가 각 벤더가 만든 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;DDS&lt;/code&gt; 표준을 타고(FastRTPS,RTI Connext..) &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;rmw&lt;/code&gt;에서 표준화 되어 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;rcl&lt;/code&gt;을 통해 각 클라이언들 만의 언어로 해석되어 메세지통신이 &lt;strong&gt;구독 및 발간&lt;/strong&gt; 형태로 이뤄 진다고 이해 할 수 있다.&lt;/p&gt;
 
 &lt;p&gt;자, 위 글들을 통해 우리는 대략적인 ROS2의 통신에 대해 수박 겉핥기를 해보았다.&lt;br /&gt;
 좀 더, 상세한 이해를 위해서는 추후 다룰 글에서 ROS2의 rcl통신을 직접 짜보면서 DDS 메커니즘을 이해 할 필요가 있다.&lt;/p&gt;
@@ -260,7 +262,7 @@ DDS 개념은 네트워크프로그래밍 영역이라 ROS 자체에서 뭔가 �
 
 &lt;p&gt;ROS2가 나오기 전 필자가 두대 이상의 로봇을 한 공간에 시뮬레이션을 굴리려고 하면 여간 골치아픈 작업이 아닐 수가 없었다.&lt;/p&gt;
 
-&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Gazebo&lt;/code&gt;에 두대 이상의 시뮬레이션을 넣고싶어 ROS 1 으로 환경을 구축할 때, 이용 해야했던 xml,yaml,launch 구조는 일반적인 방법으로  ROS Developer 들이 하기에는 매우 적합하지 못했다. &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;group&amp;gt;&lt;/code&gt; 태그 안에서 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;tf_prefix&lt;/code&gt; 를 생성해 별도의 link,joint 그룹을 생성하고 동작에 대한 별도의 node 를 형성 해 실행하는데 있어 그리고 두개 이상의 rviz를 moveit 으로 병행해 Python으로 동작시키는것은 상당히 번거롭다.&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Gazebo&lt;/code&gt;에 두대 이상의 시뮬레이션을 넣고싶어 ROS 1 으로 환경을 구축할 때, 이용 해야했던 xml,yaml,launch 구조는 일반적인 방법으로  ROS 들이 하기에는 매우 적합하지 못했다. &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;group&amp;gt;&lt;/code&gt; 태그 안에서 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;tf_prefix&lt;/code&gt; 를 생성해 별도의 link,joint 그룹을 생성하고 동작에 대한 별도의 node 를 형성 해 실행하는데 있어 그리고 두개 이상의 rviz를 moveit 으로 병행해 Python으로 동작시키는것은 상당히 번거롭다.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;https://github.com/gwkim9444/gwkim9444.github.io/blob/master/_posts/picture/1.png?raw=true&quot; alt=&quot;Relation&quot; /&gt;&lt;/p&gt;
 
