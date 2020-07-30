@@ -10,11 +10,11 @@
           <span class="site-subtitle">로봇운영체제의 모든것을 담아</span>
         </a>
         <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/archive/">Archive</a>
+            </li><li class="masthead__menu-item">
               <a href="/categories/">Categories</a>
             </li><li class="masthead__menu-item">
               <a href="/tags/">Tags</a>
-            </li><li class="masthead__menu-item">
-              <a href="/archive/">Archive</a>
             </li></ul>
         
         <button class="greedy-nav__toggle hidden" type="button">
