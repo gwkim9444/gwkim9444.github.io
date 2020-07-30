@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.1.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-07-30T11:46:33+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Groot Robot Blog</title><subtitle>Node 개발과 ROS/ROS2를 프로젝트에 적용중인 Developer</subtitle><author><name>Kim Gi Wang(Dale Kim)</name></author><entry><title type="html">ROS1과 ROS2의 차이</title><link href="http://localhost:4000/ros1-ros2/" rel="alternate" type="text/html" title="ROS1과 ROS2의 차이" /><published>2020-07-30T00:00:00+09:00</published><updated>2020-07-30T00:00:00+09:00</updated><id>http://localhost:4000/ros1-ros2</id><content type="html" xml:base="http://localhost:4000/ros1-ros2/">&lt;h1 id=&quot;ros1-과-ros2의-차이-그리고-개념정리&quot;&gt;ROS1 과 ROS2의 차이 그리고 개념정리&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.1.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-07-30T12:59:01+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Groot Robot Blog</title><subtitle>Node 개발과 ROS/ROS2를 프로젝트에 적용중인 Developer</subtitle><author><name>Kim Gi Wang(Dale Kim)</name></author><entry><title type="html">ROS1과 ROS2의 차이</title><link href="http://localhost:4000/ros1-ros2/" rel="alternate" type="text/html" title="ROS1과 ROS2의 차이" /><published>2020-07-30T00:00:00+09:00</published><updated>2020-07-30T00:00:00+09:00</updated><id>http://localhost:4000/ros1-ros2</id><content type="html" xml:base="http://localhost:4000/ros1-ros2/">&lt;h1 id=&quot;ros1-과-ros2의-차이-그리고-개념정리&quot;&gt;ROS1 과 ROS2의 차이 그리고 개념정리&lt;/h1&gt;
 &lt;hr /&gt;
 &lt;h2 id=&quot;목-차&quot;&gt;목 차&lt;/h2&gt;
 
@@ -56,7 +56,8 @@
 
 &lt;h4 id=&quot;1-application-layer&quot;&gt;1. Application Layer&lt;/h4&gt;
 
-&lt;h5 id=&quot;--ros-1-의-통신-방식&quot;&gt;- ROS 1 의 통신 방식&lt;/h5&gt;
+&lt;h4 id=&quot;회고---ros-1-의-통신-방식&quot;&gt;회고 - ROS 1 의 통신 방식&lt;/h4&gt;
+&lt;hr /&gt;
 &lt;p&gt;&lt;img src=&quot;https://github.com/gwkim9444/gwkim9444.github.io/blob/master/_posts/picture/6.png?raw=true&quot; alt=&quot;Relation&quot; /&gt;&lt;/p&gt;
 
 &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;기존의 ROS1에서는 'roscore' 라는 별도의 마스터를 두고 통신을 진행하였다. 
@@ -117,24 +118,34 @@
 &lt;h4 id=&quot;그래서-ddsdata-distribution-service-가-뭔데&quot;&gt;그래서 DDS(Data Distribution Service) 가 뭔데?&lt;/h4&gt;
 &lt;p&gt;DDS는 기존 클라이언트 - 서버 기반의 노드간 상호 동작을 중심이 아니라 노드 상호간 공유/교환 되어야 할 데이터 자체에 중심을 둔 데이터 배포 메커니즘이라고 &lt;strong&gt;ETRI&lt;/strong&gt; 에 기술되어 있다. 간단히 말하자면 원래 통신을 할 때는 서버랑 클라이언트 끼리 해야 되는게 맞지만, 워낙 시대가 좋아져서 기기들마다 통신이 되다보니 모두 연결하기엔 HW가 후달린다. 또, 즉각 대응이라는(실시간) 부담 역시 안고가야하는 통신이 요구되면서, 이런 통신 풀을 가운데(미들웨어)에서 관리하고(스케쥴링) 신뢰도를 높여(Qos) 통신 할 순 없을 까 하고 나온게 DDS란 말씀. 이로 인해 Domain ID만 가지고 통신이 되기에 Socket 이 필요없이 통신을 할 수 있게 되었다.&lt;/p&gt;
 
-&lt;p&gt;그러다 보니 자연스럽게 DDS 통신이 놓이는 포지션은 하기와 같이 쓰이게 된다.
-&lt;img src=&quot;https://github.com/gwkim9444/gwkim9444.github.io/blob/master/_posts/picture/8.png?raw=true&quot; alt=&quot;Relation&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;또한, 이러한 통신방식은 OS와 HW에 자유로우며,언어에 독립적이기 때문에 플랫폼에 자유롭다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://github.com/gwkim9444/gwkim9444.github.io/blob/master/_posts/picture/10.png?raw=true&quot; alt=&quot;Relation&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;그러다 보니 자연스럽게 DDS 통신이 놓이는 포지션은 하기와 같이 쓰이게 된다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://github.com/gwkim9444/gwkim9444.github.io/blob/master/_posts/picture/8.png?raw=true&quot; alt=&quot;Relation&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;즉, DDS는 다양한 통신 객체들의 대량 데이터를 관리하는 통신 미들웨어&lt;/strong&gt; 라고 볼 수 있다.
 DDS 개념은 네트워크프로그래밍 영역이라 ROS 자체에서 뭔가 깊게 설명하기 그렇다. 사실 ROS는 종합 예술적 오픈소스 프로젝트로 어느 한분야를 깊게 들어가면 끝도 없다. 수많은 전문가들이 만든 이 아름다운 도구를 우리는 이렇게 손쉽게 사용하고 있는것이다.&lt;/p&gt;
 
-&lt;p&gt;DDS와 경쟁을 하는 통신으로는 CORBA,JMS 의 P2P 통신방식이 있다. 이건 검색을 통해 독자들이 직접 찾아 이해 했으면 하는 마음이다.&lt;/p&gt;
+&lt;p&gt;DDS와 경쟁을 하는 통신으로는 비동기통신의 CORBA, JMS 의 P2P 통신방식이 있다. 이건 검색을 통해 독자들이 직접 찾아 이해 했으면 하는 마음이다.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.itfind.or.kr/WZIN/jugidong/1456/file3719-145601.pdf&quot;&gt;공부-링크&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;자, 이제 DDS가 뭔지는 알겠다. OMG라는 기관에서 만들었고 미들웨어라는 사실, 그리고 이것은 프로토콜이 아닌 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;표준&lt;/code&gt; 이라는 사실.&lt;/p&gt;
 
-&lt;p&gt;그래서 왜 이걸 쓰는데? 라고 물어 볼 수 있을것이다.&lt;/p&gt;
+&lt;p&gt;그래서 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;왜 이걸 쓰는데?&lt;/code&gt; 라고 물어 볼 수 있을것이다.&lt;/p&gt;
 
 &lt;p&gt;앞에서 살짝 언급했었지만 이를 좀더 구체적으로 설명 하기 위해 다시 앞서 이야기 했던 내용을 언급하고자 한다.&lt;/p&gt;
 
 &lt;h4 id=&quot;왜-dds를-쓰는건데&quot;&gt;왜 DDS를 쓰는건데?&lt;/h4&gt;
-&lt;p&gt;우리는 바야흐로 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;4차 산업혁명&lt;/code&gt;의 시대에 살고있다. &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;4차 산업혁명&lt;/code&gt;이 무엇인가? 모든 디바이스의 커넥션과 통신속도의 진화, 대용량 데이터의 부상, 인공지능 알고리즘의 혁신, 이를 받쳐주는 HW의 격변을 이야기 할 수 있을것이다. 이런 복잡한 통신디바이스가 대량으로 연결되고 관리되기 위해서는 통신 시스템의 고도화가 진행되기 마련이고 시스템 구조 역시 엄청나게 복잡해 진다. HW 개량 뿐 아니라 소프트웨어 개발 공수도 몇배로 늘어나게 된다. 이러면 시스템 아키텍쳐를 설계하는 설계자 입장에서 모든것을 간단히, 간편하게 설계하고 싶은 열망을 누구나 가지게 될것이다. 왜? 내가 편하려고!&lt;/p&gt;
 
-&lt;p&gt;DDS로 넘어오는것은 ROS1에서 시작햇던 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;연구자 및 개발자&lt;/code&gt;를 목적으로 개발했던 초기와는 달리 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;필드에서 직접 운용 가능한 ROS&lt;/code&gt;를 지향하는 것이라 볼 수있다.&lt;/p&gt;
+&lt;p&gt;우리는 바야흐로 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;4차 산업혁명&lt;/code&gt;의 시대에 살고있다. &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;4차 산업혁명&lt;/code&gt;이 무엇인가? 모든 디바이스의 커넥션과 통신속도의 진화, 대용량 데이터의 부상, 인공지능 알고리즘의 혁신, 이를 받쳐주는 HW의 격변을 이야기 할 수 있을것이다. 이런 복잡한 통신디바이스가 대량으로 연결되고 관리되기 위해서는 통신 시스템의 고도화가 진행되기 마련이고 시스템 구조 역시 엄청나게 복잡해 진다. HW 개량 뿐 아니라 소프트웨어 개발 공수도 몇배로 늘어나게 된다. 이러면 시스템 아키텍쳐를 설계하는 설계자 입장에서 모든것을 간단히, 간편하게 설계하고 싶은 열망을 누구나 가지게 될것이다. 왜? 내가 편하려고! 그래서 나오게 된것이 바로 &lt;strong&gt;구독과 발간의 통신 모델&lt;/strong&gt; 이라고 볼수 있다.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://m.blog.naver.com/PostView.nhn?blogId=neos_rtos&amp;amp;logNo=220346180839&amp;amp;proxyReferer=https:%2F%2Fwww.google.com%2F&quot;&gt;공부-링크&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;DDS로 넘어오는것은 ROS1에서 시작햇던 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;연구자 및 개발자&lt;/code&gt;를 목적으로 개발했던 초기와는 달리 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;필드에서 직접 운용 가능한 ROS&lt;/code&gt;를 지향하는간것이라 볼 수있다.&lt;/p&gt;
 
 &lt;p&gt;필자는 생산기술 필드에서 설비제작을 진행 하면서 1%의 불량도 용납하지 않는 생산필드를 충족 시킬 설비를 제작해야됬는데, 이러한 요구를 위해서는 멈춤,지연 이란 있을 수 없고 철저히 빠르게 동작을 수행 하는 설비만이 유효한 라인에 투입될 수있음을 몸소 체험했다.&lt;/p&gt;
 
@@ -144,18 +155,40 @@ DDS 개념은 네트워크프로그래밍 영역이라 ROS 자체에서 뭔가 �
 
 &lt;p&gt;PS : 참고로 ROS2 의 최고 돈줄이 미국국방성(DoD),NSA 다.&lt;/p&gt;
 
+&lt;h3 id=&quot;제대로-뜯어보자-ros2-통신&quot;&gt;제대로 뜯어보자 ROS2 통신&lt;/h3&gt;
+&lt;hr /&gt;
 &lt;p&gt;&lt;img src=&quot;https://github.com/gwkim9444/gwkim9444.github.io/blob/master/_posts/picture/9.png?raw=true&quot; alt=&quot;Relation&quot; /&gt;&lt;/p&gt;
 
 &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;상기 그림은 ROS2에서의 DDS 통신의 아키텍쳐 이다. 
-여기서 쓰이는 RTPS,RTI,rmw,rcl 등 용어에 대해 설명하고 이해하고자 한다.
+여기서 쓰이는 rmw,rcl 등 용어에 대해 설명하고 이해하고자 한다.
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;자 저 광활한 아키텍쳐를 보라 일단, 초입자 입장에서 볼때 모르는 용어들 부터 하나씩 정리해보자&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;1. FastRTPS 는 무엇인가?&lt;/strong&gt;
-RTPS(Real Time Publish Subscribe) 라는 녀석은 OMG에서 만든 녀석이다. 데이터 분산서비스 표준의 기반이 되는 프로토콜로서 pub&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;1. 파랑색 부분의 FastRTPS,RTI Connext 는 무엇인가?&lt;/strong&gt;&lt;/p&gt;
 
-&lt;p&gt;따라서 DDS 통신의 특징은 하기와 같이 기술될 수 있다.&lt;/p&gt;
+&lt;p&gt;RTPS(Real Time Publish Subscribe) 라는 녀석은 OMG에서 만든 녀석이다. 이녀석을 만든 목적은 디바이스와 디바이스 간에 time-critical/실시간으로 안전하게 정보 공유가 필요한 환경에서 대응하고자 함인데 이를 위해 &lt;strong&gt;데이터 분산서비스 표준의 기반이 되는 프로토콜&lt;/strong&gt; 을 만들고 publish/subscribe 패턴을 이용해서 확장성, 실시간성, 독립성, 고성능, 상호 정보 교환이 가능하도록 만들었다. &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;RTI&lt;/code&gt; 역시 회사 이름이며 이회사에서 만든 각종 DDS 솔루션 이름들이 RTI Connext .. 으로열거 되어있다고 보면된다. 우리나라도 &lt;strong&gt;ETRI&lt;/strong&gt; 에서 한국형 DDS를 개발한 내용이 있으니 심심하면 공부하는것도 추천드린다.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;2. rmw 는 무엇인가?&lt;/strong&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;rmw(ROS Middleware Interface)라고 부르며, 앞서 열거드린 '퍼랭이'들의 욕망을 모두 품어주시는 벤더에 자유로우며, 구독 및 발간, 원격함수 호출등의 인터페이스를 제공하고있다.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;3. rcl 은 무엇인가?&lt;/strong&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;rcl(ROS Client library)는 C 라이브러 공간,시간,로깅 등 ROS의 기본기능을 제공한다.
+또한 rcl 위에 각종 언어를 지원하도록 인터페이스를 지원하며 rclcpp, rclpy, rcljava 등으로 ROS2 클라이언트 라이브러리로 지원하고있다.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;4. rclcpp, rclpy, rcljava은 무엇인가?&lt;/strong&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;다양한 언어로 생성된 node 들을 실행 하기위해 ROS2 에 지원하는 기능으로 각종 언어를 활용해 노드를 실행 할 수있도록 돕는 rcl 들이다.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;자, 위 글들을 통해 우리는 대략적인 ROS2의 통신에 대해 수박 겉핥기를 해보았다.&lt;br /&gt;
+좀 더, 상세한 이해를 위해서는 추후 다룰 글에서 ROS2의 rcl통신을 직접 짜보면서 DDS 메커니즘을 이해 할 필요가 있다.&lt;/p&gt;
+
+&lt;p&gt;상기 글을 요약하자면, DDS 통신의 특징은 하기와 같이 기술될 수 있다.&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;
@@ -164,14 +197,16 @@ RTPS(Real Time Publish Subscribe) 라는 녀석은 OMG에서 만든 녀석이다
   &lt;li&gt;
     &lt;p&gt;자동 디스커버리(discovery) 기능 : 시스템의 동적인 구성 변화에 자동 대응&lt;/p&gt;
   &lt;/li&gt;
-  &lt;li&gt;일정 시간 내(deterministic) 데이터 전송 기능 : 실시간 데이터 전송 기능&lt;/li&gt;
-  &lt;li&gt;다양한 통신 방식 : 일대일(one-to-one), 일대다(one-to-many), 다대일(many-to-one), 다대다(many-to-many) 통신 지원&lt;/li&gt;
-  &lt;li&gt;다양하고 상세한 메시지 전송 제어용 QoS(Quality of Service) 파라미터 제공 : 시스템 목적에 따른 다양한 데이터 전달 정책을 선택 적용 가능&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;일정 시간 내(deterministic) 데이터 전송 기능 : 실시간 데이터 전송 기능&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;다양한 통신 방식 : 일대일(one-to-one), 일대다(one-to-many), 다대일(many-to-one), 다대다(many-to-many) 통신 지원&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;다양하고 상세한 메시지 전송 제어용 QoS(Quality of Service) 파라미터 제공 : 시스템 목적에 따른 다양한 데이터 전달 정책을 선택 적용 가능&lt;/p&gt;
+  &lt;/li&gt;
 &lt;/ul&gt;
-
-&lt;h5 id=&quot;1-발간--구독-통신방식&quot;&gt;1. 발간 / 구독 통신방식&lt;/h5&gt;
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;발간 구독 방식은 앞에서 
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h3 id=&quot;ros-2-의-명령어-특징&quot;&gt;ROS 2 의 명령어 특징&lt;/h3&gt;
 &lt;ul&gt;
@@ -234,9 +269,12 @@ RTPS(Real Time Publish Subscribe) 라는 녀석은 OMG에서 만든 녀석이다
 
 &lt;p&gt;&lt;img src=&quot;https://github.com/gwkim9444/gwkim9444.github.io/blob/master/_posts/picture/2.png?raw=true&quot; alt=&quot;Relation&quot; /&gt;&lt;/p&gt;
 
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;두대 이상의 로봇은 보다 복잡한 tf map을 그린다. ![Relation](https://github.com/gwkim9444/gwkim9444.github.io/blob/master/_posts/picture/3.png?raw=true)
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;두대 이상의 로봇은 보다 복잡한 tf map을 그린다.  
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-두대 이상의 로봇의 node는 group 내에서 더 복잡하게 얽혀있다.
+&lt;p&gt;&lt;img src=&quot;https://github.com/gwkim9444/gwkim9444.github.io/blob/master/_posts/picture/3.png?raw=true&quot; alt=&quot;Relation&quot; /&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;두대 이상의 로봇의 node는 group 내에서 더 복잡하게 얽혀있다.
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;이러한 형태의 번거로운 구조를 ROS2에서는 보다 간편하고 쉽게 풀어나가는 모습을 보여준다.&lt;/p&gt;
@@ -337,4 +375,11 @@ package.xml : 패키지 정보가 담긴 xml 구조의 파일
 
 &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;rclcpp = C++ 클라이언트 라이브러리
 rclpy = Python 클라이언트 라이브러리
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>Kim Gi Wang(Dale Kim)</name></author><summary type="html">ROS1 과 ROS2의 차이 그리고 개념정리 목 차</summary></entry></feed>
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;출저&quot;&gt;출저&lt;/h3&gt;
+&lt;hr /&gt;
+&lt;p&gt;&lt;a href=&quot;https://blog.naver.com/neos_rtos/30173805276&quot;&gt;한컴MDS-Blog&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;http://www.hellot.net/new_hellot/magazine/magazine_read.html?code=201&amp;amp;sub=002&amp;amp;idx=44385&amp;amp;page=239&amp;amp;list=all&quot;&gt;첨단-헬로티&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;https://discourse.ros.org/t/ros-2-seminar/12872&quot;&gt;표윤석박사님_ROS2_Seminar&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;https://discourse.ros.org/&quot;&gt;ROS-Discourse&lt;/a&gt;&lt;/p&gt;</content><author><name>Kim Gi Wang(Dale Kim)</name></author><summary type="html">ROS1 과 ROS2의 차이 그리고 개념정리 목 차</summary></entry></feed>

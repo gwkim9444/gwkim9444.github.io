@@ -1,334 +1,4 @@
-<!doctype html>
-<!--
-  Minimal Mistakes Jekyll Theme 4.19.3 by Michael Rose
-  Copyright 2013-2019 Michael Rose - mademistakes.com | @mmistakes
-  Free for personal and commercial use under the MIT license
-  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
--->
-<html lang="ko" class="no-js">
-  <head>
-    <meta charset="utf-8">
-
-<!-- begin _includes/seo.html --><title>ROS1과 ROS2의 차이 - Groot Robot Blog</title>
-<meta name="description" content="ROS1 과 ROS2의 차이 그리고 개념정리   목 차">
-
-
-  <meta name="author" content="Kim Gi Wang(Dale Kim)">
-
-
-<meta property="og:type" content="article">
-<meta property="og:locale" content="ko_KR">
-<meta property="og:site_name" content="Groot Robot Blog">
-<meta property="og:title" content="ROS1과 ROS2의 차이">
-<meta property="og:url" content="http://localhost:4000/ros1-ros2/">
-
-
-  <meta property="og:description" content="ROS1 과 ROS2의 차이 그리고 개념정리   목 차">
-
-
-
-
-
-
-
-  <meta property="article:published_time" content="2020-07-30T00:00:00+09:00">
-
-
-
-
-
-  
-
-  
-
-
-<link rel="canonical" href="http://localhost:4000/ros1-ros2/">
-
-
-
-
-<script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    
-      "@type": "Person",
-      "name": "Kim Gi Wang(Dale Kim)",
-      "url": "http://localhost:4000/"
-    
-  }
-</script>
-
-
-
-
-
-
-<!-- end _includes/seo.html -->
-
-
-<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Groot Robot Blog Feed">
-
-<!-- https://t.co/dKP3o1e -->
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<script>
-  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
-</script>
-
-<!-- For all browsers -->
-<link rel="stylesheet" href="/assets/css/main.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
-
-<!--[if IE]>
-  <style>
-    /* old IE unsupported flexbox fixes */
-    .greedy-nav .site-title {
-      padding-right: 3em;
-    }
-    .greedy-nav button {
-      position: absolute;
-      top: 0;
-      right: 0;
-      height: 100%;
-    }
-  </style>
-<![endif]-->
-
-
-
-    <!-- start custom head snippets -->
-
-<!-- insert favicons. use https://realfavicongenerator.net/ -->
-
-<!-- end custom head snippets -->
-
-  </head>
-
-  <body class="layout--single">
-    <nav class="skip-links">
-  <h2 class="screen-reader-text">Skip links</h2>
-  <ul>
-    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
-    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
-    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
-  </ul>
-</nav>
-
-    <!--[if lt IE 9]>
-<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
-<![endif]-->
-
-    
-
-<div class="masthead">
-  <div class="masthead__inner-wrap">
-    <div class="masthead__menu">
-      <nav id="site-nav" class="greedy-nav">
-        
-        <a class="site-title" href="/">
-          ROS Developer Blog
-          <span class="site-subtitle">로봇운영체제의 모든것을 담아</span>
-        </a>
-        <ul class="visible-links"><li class="masthead__menu-item">
-              <a href="/archive/">Archive</a>
-            </li><li class="masthead__menu-item">
-              <a href="/categories/">Categories</a>
-            </li><li class="masthead__menu-item">
-              <a href="/tags/">Tags</a>
-            </li></ul>
-        
-        <button class="greedy-nav__toggle hidden" type="button">
-          <span class="visually-hidden">토글 메뉴</span>
-          <div class="navicon"></div>
-        </button>
-        <ul class="hidden-links hidden"></ul>
-      </nav>
-    </div>
-  </div>
-</div>
-
-
-    <div class="initial-content">
-      
-
-
-  
-    
-
-
-
-<nav class="breadcrumbs">
-  <ol itemscope itemtype="https://schema.org/BreadcrumbList">
-    
-    
-    
-      
-        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-          <a href="http://localhost:4000/" itemprop="item"><span itemprop="name">Home</span></a>
-          <meta itemprop="position" content="1" />
-        </li>
-        <span class="sep">/</span>
-      
-      
-        <li class="current">ROS1과 ROS2의 차이</li>
-      
-    
-  </ol>
-</nav>
-
-  
-
-
-<div id="main" role="main">
-  
-  <div class="sidebar sticky">
-  
-
-
-<div itemscope itemtype="https://schema.org/Person">
-
-  
-    <div>
-      
-        <img src="/assets/images/me.jpg" alt="Kim Gi Wang(Dale Kim)" itemprop="image">
-      
-    </div>
-  
-
-  <div class="author__content">
-    
-      <h3 class="author__name" itemprop="name">Kim Gi Wang(Dale Kim)</h3>
-    
-    
-      <div class="author__bio" itemprop="description">
-        <p>ROS 개발과 관련된 글을 올리는 장소입니다 <br /> 각종 의견 및 피드백 환영합니다.</p>
-
-      </div>
-    
-  </div>
-
-  <div class="author__urls-wrapper">
-    <button class="btn btn--inverse">팔로우 </button>
-    <ul class="author__urls social-icons">
-      
-        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
-          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name">Republic of KOREA</span>
-        </li>
-      
-
-      
-        
-          
-            <li><a href="kking9444@gmail.com" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span></a></li>
-          
-        
-          
-            <li><a href="https://gwkim9444.github.io" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-link" aria-hidden="true"></i><span class="label">Website</span></a></li>
-          
-        
-          
-        
-          
-        
-          
-            <li><a href="https://github.com/gwkim9444" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
-          
-        
-          
-        
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      <!--
-  <li>
-    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
-      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
-    </a>
-  </li>
--->
-    </ul>
-  </div>
-</div>
-
-  
-  </div>
-
-
-
-  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="ROS1과 ROS2의 차이">
-    <meta itemprop="description" content="ROS1 과 ROS2의 차이 그리고 개념정리목 차">
-    <meta itemprop="datePublished" content="2020-07-30T00:00:00+09:00">
-    
-
-    <div class="page__inner-wrap">
-      
-        <header>
-          <h1 id="page-title" class="page__title" itemprop="headline">ROS1과 ROS2의 차이
-</h1>
-          
-            <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
-
-
-
-
-  10 분 소요
-
-</p>
-          
-        </header>
-      
-
-      <section class="page__content" itemprop="text">
-        
-        <h1 id="ros1-과-ros2의-차이-그리고-개념정리">ROS1 과 ROS2의 차이 그리고 개념정리</h1>
+I"�j<h1 id="ros1-과-ros2의-차이-그리고-개념정리">ROS1 과 ROS2의 차이 그리고 개념정리</h1>
 <hr />
 <h2 id="목-차">목 차</h2>
 
@@ -386,8 +56,7 @@
 
 <h4 id="1-application-layer">1. Application Layer</h4>
 
-<h4 id="회고---ros-1-의-통신-방식">회고 - ROS 1 의 통신 방식</h4>
-<hr />
+<h5 id="--ros-1-의-통신-방식">- ROS 1 의 통신 방식</h5>
 <p><img src="https://github.com/gwkim9444/gwkim9444.github.io/blob/master/_posts/picture/6.png?raw=true" alt="Relation" /></p>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>기존의 ROS1에서는 'roscore' 라는 별도의 마스터를 두고 통신을 진행하였다. 
@@ -448,10 +117,6 @@
 <h4 id="그래서-ddsdata-distribution-service-가-뭔데">그래서 DDS(Data Distribution Service) 가 뭔데?</h4>
 <p>DDS는 기존 클라이언트 - 서버 기반의 노드간 상호 동작을 중심이 아니라 노드 상호간 공유/교환 되어야 할 데이터 자체에 중심을 둔 데이터 배포 메커니즘이라고 <strong>ETRI</strong> 에 기술되어 있다. 간단히 말하자면 원래 통신을 할 때는 서버랑 클라이언트 끼리 해야 되는게 맞지만, 워낙 시대가 좋아져서 기기들마다 통신이 되다보니 모두 연결하기엔 HW가 후달린다. 또, 즉각 대응이라는(실시간) 부담 역시 안고가야하는 통신이 요구되면서, 이런 통신 풀을 가운데(미들웨어)에서 관리하고(스케쥴링) 신뢰도를 높여(Qos) 통신 할 순 없을 까 하고 나온게 DDS란 말씀. 이로 인해 Domain ID만 가지고 통신이 되기에 Socket 이 필요없이 통신을 할 수 있게 되었다.</p>
 
-<p>또한, 이러한 통신방식은 OS와 HW에 자유로우며,언어에 독립적이기 때문에 플랫폼에 자유롭다.</p>
-
-<p><img src="https://github.com/gwkim9444/gwkim9444.github.io/blob/master/_posts/picture/10.png?raw=true" alt="Relation" /></p>
-
 <p>그러다 보니 자연스럽게 DDS 통신이 놓이는 포지션은 하기와 같이 쓰이게 된다.</p>
 
 <p><img src="https://github.com/gwkim9444/gwkim9444.github.io/blob/master/_posts/picture/8.png?raw=true" alt="Relation" /></p>
@@ -459,23 +124,19 @@
 <p><strong>즉, DDS는 다양한 통신 객체들의 대량 데이터를 관리하는 통신 미들웨어</strong> 라고 볼 수 있다.
 DDS 개념은 네트워크프로그래밍 영역이라 ROS 자체에서 뭔가 깊게 설명하기 그렇다. 사실 ROS는 종합 예술적 오픈소스 프로젝트로 어느 한분야를 깊게 들어가면 끝도 없다. 수많은 전문가들이 만든 이 아름다운 도구를 우리는 이렇게 손쉽게 사용하고 있는것이다.</p>
 
-<p>DDS와 경쟁을 하는 통신으로는 비동기통신의 CORBA, JMS 의 P2P 통신방식이 있다. 이건 검색을 통해 독자들이 직접 찾아 이해 했으면 하는 마음이다.</p>
-
-<p><a href="https://www.itfind.or.kr/WZIN/jugidong/1456/file3719-145601.pdf">공부-링크</a></p>
+<p>DDS와 경쟁을 하는 통신으로는 CORBA,JMS 의 P2P 통신방식이 있다. 이건 검색을 통해 독자들이 직접 찾아 이해 했으면 하는 마음이다.</p>
 
 <p>자, 이제 DDS가 뭔지는 알겠다. OMG라는 기관에서 만들었고 미들웨어라는 사실, 그리고 이것은 프로토콜이 아닌 <code class="language-plaintext highlighter-rouge">표준</code> 이라는 사실.</p>
 
-<p>그래서 <code class="language-plaintext highlighter-rouge">왜 이걸 쓰는데?</code> 라고 물어 볼 수 있을것이다.</p>
+<p>그래서 왜 이걸 쓰는데? 라고 물어 볼 수 있을것이다.</p>
 
 <p>앞에서 살짝 언급했었지만 이를 좀더 구체적으로 설명 하기 위해 다시 앞서 이야기 했던 내용을 언급하고자 한다.</p>
 
 <h4 id="왜-dds를-쓰는건데">왜 DDS를 쓰는건데?</h4>
 
-<p>우리는 바야흐로 <code class="language-plaintext highlighter-rouge">4차 산업혁명</code>의 시대에 살고있다. <code class="language-plaintext highlighter-rouge">4차 산업혁명</code>이 무엇인가? 모든 디바이스의 커넥션과 통신속도의 진화, 대용량 데이터의 부상, 인공지능 알고리즘의 혁신, 이를 받쳐주는 HW의 격변을 이야기 할 수 있을것이다. 이런 복잡한 통신디바이스가 대량으로 연결되고 관리되기 위해서는 통신 시스템의 고도화가 진행되기 마련이고 시스템 구조 역시 엄청나게 복잡해 진다. HW 개량 뿐 아니라 소프트웨어 개발 공수도 몇배로 늘어나게 된다. 이러면 시스템 아키텍쳐를 설계하는 설계자 입장에서 모든것을 간단히, 간편하게 설계하고 싶은 열망을 누구나 가지게 될것이다. 왜? 내가 편하려고! 그래서 나오게 된것이 바로 <strong>구독과 발간의 통신 모델</strong> 이라고 볼수 있다.</p>
+<p>우리는 바야흐로 <code class="language-plaintext highlighter-rouge">4차 산업혁명</code>의 시대에 살고있다. <code class="language-plaintext highlighter-rouge">4차 산업혁명</code>이 무엇인가? 모든 디바이스의 커넥션과 통신속도의 진화, 대용량 데이터의 부상, 인공지능 알고리즘의 혁신, 이를 받쳐주는 HW의 격변을 이야기 할 수 있을것이다. 이런 복잡한 통신디바이스가 대량으로 연결되고 관리되기 위해서는 통신 시스템의 고도화가 진행되기 마련이고 시스템 구조 역시 엄청나게 복잡해 진다. HW 개량 뿐 아니라 소프트웨어 개발 공수도 몇배로 늘어나게 된다. 이러면 시스템 아키텍쳐를 설계하는 설계자 입장에서 모든것을 간단히, 간편하게 설계하고 싶은 열망을 누구나 가지게 될것이다. 왜? 내가 편하려고!</p>
 
-<p><a href="https://m.blog.naver.com/PostView.nhn?blogId=neos_rtos&amp;logNo=220346180839&amp;proxyReferer=https:%2F%2Fwww.google.com%2F">공부-링크</a></p>
-
-<p>DDS로 넘어오는것은 ROS1에서 시작햇던 <code class="language-plaintext highlighter-rouge">연구자 및 개발자</code>를 목적으로 개발했던 초기와는 달리 <code class="language-plaintext highlighter-rouge">필드에서 직접 운용 가능한 ROS</code>를 지향하는간것이라 볼 수있다.</p>
+<p>DDS로 넘어오는것은 ROS1에서 시작햇던 <code class="language-plaintext highlighter-rouge">연구자 및 개발자</code>를 목적으로 개발했던 초기와는 달리 <code class="language-plaintext highlighter-rouge">필드에서 직접 운용 가능한 ROS</code>를 지향하는 것이라 볼 수있다.</p>
 
 <p>필자는 생산기술 필드에서 설비제작을 진행 하면서 1%의 불량도 용납하지 않는 생산필드를 충족 시킬 설비를 제작해야됬는데, 이러한 요구를 위해서는 멈춤,지연 이란 있을 수 없고 철저히 빠르게 동작을 수행 하는 설비만이 유효한 라인에 투입될 수있음을 몸소 체험했다.</p>
 
@@ -485,40 +146,19 @@ DDS 개념은 네트워크프로그래밍 영역이라 ROS 자체에서 뭔가 �
 
 <p>PS : 참고로 ROS2 의 최고 돈줄이 미국국방성(DoD),NSA 다.</p>
 
-<h3 id="제대로-뜯어보자-ros2-통신">제대로 뜯어보자 ROS2 통신</h3>
-<hr />
 <p><img src="https://github.com/gwkim9444/gwkim9444.github.io/blob/master/_posts/picture/9.png?raw=true" alt="Relation" /></p>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>상기 그림은 ROS2에서의 DDS 통신의 아키텍쳐 이다. 
-여기서 쓰이는 rmw,rcl 등 용어에 대해 설명하고 이해하고자 한다.
+여기서 쓰이는 RTPS,RTI,rmw,rcl 등 용어에 대해 설명하고 이해하고자 한다.
 </code></pre></div></div>
 
 <p>자 저 광활한 아키텍쳐를 보라 일단, 초입자 입장에서 볼때 모르는 용어들 부터 하나씩 정리해보자</p>
 
-<p><strong>1. 파랑색 부분의 FastRTPS,RTI Connext 는 무엇인가?</strong></p>
+<p><strong>1. FastRTPS 는 무엇인가?</strong></p>
 
-<p>RTPS(Real Time Publish Subscribe) 라는 녀석은 OMG에서 만든 녀석이다. 이녀석을 만든 목적은 디바이스와 디바이스 간에 time-critical/실시간으로 안전하게 정보 공유가 필요한 환경에서 대응하고자 함인데 이를 위해 <strong>데이터 분산서비스 표준의 기반이 되는 프로토콜</strong> 을 만들고 publish/subscribe 패턴을 이용해서 확장성, 실시간성, 독립성, 고성능, 상호 정보 교환이 가능하도록 만들었다. <code class="language-plaintext highlighter-rouge">RTI</code> 역시 회사 이름이며 이회사에서 만든 각종 DDS 솔루션 이름들이 RTI Connext .. 으로열거 되어있다고 보면된다. 우리나라도 <strong>ETRI</strong> 에서 한국형 DDS를 개발한 내용이 있으니 심심하면 공부하는것도 추천드린다.</p>
+<p>RTPS(Real Time Publish Subscribe) 라는 녀석은 OMG에서 만든 녀석이다. 이녀석을 만든 목적은 디바이스와 디바이스 간에 time-critical/실시간으로 안전하게 정보 공유가 필요한 환경에서 대응하고자 함인데 이를 위해 <strong>데이터 분산서비스 표준의 기반이 되는 프로토콜</strong> 을 만들고 publish/subscribe 패턴을 이용해서 확장성, 실시간성, 독립성, 고성능, 상호 정보 교환이 가능하도록 만들었다. 앞서 설명했던 최상의 통신환경을 구성하기 위해 도입하였다고 이해하면 된다.</p>
 
-<p><strong>2. rmw 는 무엇인가?</strong></p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rmw(ROS Middleware Interface)라고 부르며, 앞서 열거드린 '퍼랭이'들의 욕망을 모두 품어주시는 벤더에 자유로우며, 구독 및 발간, 원격함수 호출등의 인터페이스를 제공하고있다.
-</code></pre></div></div>
-
-<p><strong>3. rcl 은 무엇인가?</strong></p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rcl(ROS Client library)는 C 라이브러 공간,시간,로깅 등 ROS의 기본기능을 제공한다.
-또한 rcl 위에 각종 언어를 지원하도록 인터페이스를 지원하며 rclcpp, rclpy, rcljava 등으로 ROS2 클라이언트 라이브러리로 지원하고있다.
-</code></pre></div></div>
-
-<p><strong>4. rclcpp, rclpy, rcljava은 무엇인가?</strong></p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>다양한 언어로 생성된 node 들을 실행 하기위해 ROS2 에 지원하는 기능으로 각종 언어를 활용해 노드를 실행 할 수있도록 돕는 rcl 들이다.
-</code></pre></div></div>
-
-<p>자, 위 글들을 통해 우리는 대략적인 ROS2의 통신에 대해 수박 겉핥기를 해보았다.<br />
-좀 더, 상세한 이해를 위해서는 추후 다룰 글에서 ROS2의 rcl통신을 직접 짜보면서 DDS 메커니즘을 이해 할 필요가 있다.</p>
-
-<p>상기 글을 요약하자면, DDS 통신의 특징은 하기와 같이 기술될 수 있다.</p>
+<p>따라서 DDS 통신의 특징은 하기와 같이 기술될 수 있다.</p>
 
 <ul>
   <li>
@@ -527,16 +167,14 @@ DDS 개념은 네트워크프로그래밍 영역이라 ROS 자체에서 뭔가 �
   <li>
     <p>자동 디스커버리(discovery) 기능 : 시스템의 동적인 구성 변화에 자동 대응</p>
   </li>
-  <li>
-    <p>일정 시간 내(deterministic) 데이터 전송 기능 : 실시간 데이터 전송 기능</p>
-  </li>
-  <li>
-    <p>다양한 통신 방식 : 일대일(one-to-one), 일대다(one-to-many), 다대일(many-to-one), 다대다(many-to-many) 통신 지원</p>
-  </li>
-  <li>
-    <p>다양하고 상세한 메시지 전송 제어용 QoS(Quality of Service) 파라미터 제공 : 시스템 목적에 따른 다양한 데이터 전달 정책을 선택 적용 가능</p>
-  </li>
+  <li>일정 시간 내(deterministic) 데이터 전송 기능 : 실시간 데이터 전송 기능</li>
+  <li>다양한 통신 방식 : 일대일(one-to-one), 일대다(one-to-many), 다대일(many-to-one), 다대다(many-to-many) 통신 지원</li>
+  <li>다양하고 상세한 메시지 전송 제어용 QoS(Quality of Service) 파라미터 제공 : 시스템 목적에 따른 다양한 데이터 전달 정책을 선택 적용 가능</li>
 </ul>
+
+<h5 id="1-발간--구독-통신방식">1. 발간 / 구독 통신방식</h5>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>발간 구독 방식은 앞에서 
+</code></pre></div></div>
 
 <h3 id="ros-2-의-명령어-특징">ROS 2 의 명령어 특징</h3>
 <ul>
@@ -709,110 +347,8 @@ rclpy = Python 클라이언트 라이브러리
 
 <h3 id="출저">출저</h3>
 <hr />
-<p><a href="https://blog.naver.com/neos_rtos/30173805276">한컴MDS-Blog</a><br />
-<a href="http://www.hellot.net/new_hellot/magazine/magazine_read.html?code=201&amp;sub=002&amp;idx=44385&amp;page=239&amp;list=all">첨단-헬로티</a><br />
-<a href="https://discourse.ros.org/t/ros-2-seminar/12872">표윤석박사님_ROS2_Seminar</a><br />
+<p><a href="https://blog.naver.com/neos_rtos/30173805276">한컴MDS-Blog</a>
+<a href="http://www.hellot.net/new_hellot/magazine/magazine_read.html?code=201&amp;sub=002&amp;idx=44385&amp;page=239&amp;list=all">첨단-헬로티</a>
+<a href="https://discourse.ros.org/t/ros-2-seminar/12872">표윤석박사님_ROS2_Seminar</a>
 <a href="https://discourse.ros.org/">ROS-Discourse</a></p>
-
-        
-      </section>
-
-      <footer class="page__meta">
-        
-        
-
-
-        
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time datetime="2020-07-30T00:00:00+09:00">July 30, 2020</time></p>
-
-
-      </footer>
-
-      <section class="page__share">
-  
-    <h4 class="page__share-title">공유하기</h4>
-  
-
-  <a href="https://twitter.com/intent/tweet?text=ROS1%EA%B3%BC+ROS2%EC%9D%98+%EC%B0%A8%EC%9D%B4%20http%3A%2F%2Flocalhost%3A4000%2Fros1-ros2%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
-
-  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fros1-ros2%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
-
-  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fros1-ros2%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
-</section>
-
-
-      
-    </div>
-
-    
-  </article>
-
-  
-  
-    <div class="page__related">
-      <h4 class="page__related-title">참고</h4>
-      <div class="grid__wrapper">
-        
-          
-            
-      </div>
-    </div>
-  
-</div>
-
-    </div>
-
-    
-
-    <div id="footer" class="page__footer">
-      <footer>
-        <!-- start custom footer snippets -->
-
-<!-- end custom footer snippets -->
-        <div class="page__footer-follow">
-  <ul class="social-icons">
-    
-      <li><strong>팔로우 :</strong></li>
-    
-
-    
-      
-        
-      
-        
-      
-        
-          <li><a href="https://github.com/gwkim9444" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
-        
-      
-        
-      
-        
-      
-        
-      
-    
-
-    <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> 피드</a></li>
-  </ul>
-</div>
-
-<div class="page__footer-copyright">&copy; 2020 Groot Robot Blog. Powered by <a href="https://github.com/gwkim9444" rel="nofollow">Dale Kim</a></div>
-
-      </footer>
-    </div>
-
-    
-  <script src="/assets/js/main.min.js"></script>
-
-
-
-
-
-
-
-
-
-
-  </body>
-</html>
+:ET
