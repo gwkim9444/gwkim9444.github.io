@@ -1,11 +1,16 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.1.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-07-30T13:06:50+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Groot Robot Blog</title><subtitle>Node 개발과 ROS/ROS2를 프로젝트에 적용중인 Developer</subtitle><author><name>Kim Gi Wang(Dale Kim)</name></author><entry><title type="html">ROS1과 ROS2의 차이</title><link href="http://localhost:4000/ros1-ros2/" rel="alternate" type="text/html" title="ROS1과 ROS2의 차이" /><published>2020-07-30T00:00:00+09:00</published><updated>2020-07-30T00:00:00+09:00</updated><id>http://localhost:4000/ros1-ros2</id><content type="html" xml:base="http://localhost:4000/ros1-ros2/">&lt;h1 id=&quot;ros1-과-ros2의-차이-그리고-개념정리&quot;&gt;ROS1 과 ROS2의 차이 그리고 개념정리&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.1.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-07-30T14:30:11+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Groot Robot Blog</title><subtitle>Node 개발과 ROS/ROS2를 프로젝트에 적용중인 Developer</subtitle><author><name>Kim Gi Wang(Dale Kim)</name></author><entry><title type="html">ROS1과 ROS2의 차이</title><link href="http://localhost:4000/ros1-ros2/" rel="alternate" type="text/html" title="ROS1과 ROS2의 차이" /><published>2020-07-30T00:00:00+09:00</published><updated>2020-07-30T00:00:00+09:00</updated><id>http://localhost:4000/ros1-ros2</id><content type="html" xml:base="http://localhost:4000/ros1-ros2/">&lt;h1 id=&quot;ros1-과-ros2의-차이-그리고-개념정리&quot;&gt;ROS1 과 ROS2의 차이 그리고 개념정리&lt;/h1&gt;
 &lt;hr /&gt;
 &lt;h2 id=&quot;목-차&quot;&gt;목 차&lt;/h2&gt;
+&lt;p&gt;※ ROS1 과 ROS2 에 대한 차이를 알고 싶으신 분은 1번만 참고하시면 됩니다.&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;#1-ros-1-과-ros-2-의-차이점-비교&quot;&gt;1. ROS1 과 ROS2의 차이점 비교&lt;/a&gt;&lt;br /&gt;
-&lt;a href=&quot;#2-ros-1-과-ros-2-는-통신이-가능한가&quot;&gt;2. ROS 1 과 ROS 2 는 통신이 가능한가?&lt;/a&gt;&lt;br /&gt;
+&lt;p&gt;&lt;a href=&quot;#1-ros-1-과-ros-2-의-차이점-비교&quot;&gt;1. ROS1 과 ROS2의 차이점 비교&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;#h4-id1-application-layer-1181-application-layerh4&quot;&gt;Application Layer&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#h4-id2-middleware-layer-842-middleware-layerh4&quot;&gt;Middleware Layer&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#2-ros-1-과-ros-2-는-통신이-가능한가&quot;&gt;2. ROS 1 과 ROS 2 는 통신이 가능한가?&lt;/a&gt;&lt;br /&gt;
 &lt;a href=&quot;#3-ros-2-는-ros-1-의-한계를-극복하기위해-만들어-진다&quot;&gt;3. ROS 2 는 ROS 1 의 한계를 극복하기위해 만들어 진다&lt;/a&gt;&lt;br /&gt;
-&lt;a href=&quot;#4-ros-2-와-그-이전의-개념-탑재하기&quot;&gt;4. ROS 2 와 그 이전의 개념 탑재하기&lt;/a&gt;&lt;/p&gt;
+&lt;a href=&quot;#4-ros-2-와-그-이전의-개념-탑재하기&quot;&gt;4. ROS 2 와 그 이전의 개념 탑재하기&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;h2 id=&quot;1-ros-1-과-ros-2-의-차이점-비교&quot;&gt;1. ROS 1 과 ROS 2 의 차이점 비교&lt;/h2&gt;
 
@@ -55,7 +60,7 @@
 &lt;/table&gt;
 
 &lt;h4 id=&quot;1-application-layer&quot;&gt;1. Application Layer&lt;/h4&gt;
-
+&lt;hr /&gt;
 &lt;h4 id=&quot;회고---ros-1-의-통신-방식&quot;&gt;회고 - ROS 1 의 통신 방식&lt;/h4&gt;
 &lt;hr /&gt;
 &lt;p&gt;&lt;img src=&quot;https://github.com/gwkim9444/gwkim9444.github.io/blob/master/_posts/picture/6.png?raw=true&quot; alt=&quot;Relation&quot; /&gt;&lt;/p&gt;
@@ -101,7 +106,8 @@
   &lt;/tbody&gt;
 &lt;/table&gt;
 
-&lt;h5 id=&quot;--ros-2의-통신방식&quot;&gt;- ROS 2의 통신방식&lt;/h5&gt;
+&lt;h4 id=&quot;ros-2의-통신방식&quot;&gt;ROS 2의 통신방식&lt;/h4&gt;
+&lt;hr /&gt;
 &lt;p&gt;ROS2의 경우 DDS(Data Distribution Service)라는 통신방식을 활용하여 기존의 통신방식을 개선하였다.&lt;br /&gt;
 도데체 DDS가 뭔데 ROS2에서 이를 도입하였을까? 이 DDS 통신에 대해서만 제대로 이해 해도 일단 ROS1 과 ROS2의 차이는 절반을 이해했다고 해도 된다. 
 우선 이 통신 표준을 설립한 OMG(Object Management Group)에 대해서 알아보자&lt;/p&gt;
@@ -145,7 +151,7 @@ DDS 개념은 네트워크프로그래밍 영역이라 ROS 자체에서 뭔가 �
 
 &lt;p&gt;&lt;a href=&quot;https://m.blog.naver.com/PostView.nhn?blogId=neos_rtos&amp;amp;logNo=220346180839&amp;amp;proxyReferer=https:%2F%2Fwww.google.com%2F&quot;&gt;공부-링크&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;DDS로 넘어오는것은 ROS1에서 시작햇던 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;연구자 및 개발자&lt;/code&gt;를 목적으로 개발했던 초기와는 달리 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;필드에서 직접 운용 가능한 ROS&lt;/code&gt;를 지향하는간것이라 볼 수있다.&lt;/p&gt;
+&lt;p&gt;DDS로 넘어오는것은 ROS1에서 시작햇던 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;연구자 및 개발자&lt;/code&gt;를 목적으로 개발했던 초기와는 달리 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;필드에서 직접 운용 가능한 ROS&lt;/code&gt;를 지향하는 방향으로 간것이라 볼 수있다.&lt;/p&gt;
 
 &lt;p&gt;필자는 생산기술 필드에서 설비제작을 진행 하면서 1%의 불량도 용납하지 않는 생산필드를 충족 시킬 설비를 제작해야됬는데, 이러한 요구를 위해서는 멈춤,지연 이란 있을 수 없고 철저히 빠르게 동작을 수행 하는 설비만이 유효한 라인에 투입될 수있음을 몸소 체험했다.&lt;/p&gt;
 
@@ -210,7 +216,28 @@ DDS 개념은 네트워크프로그래밍 영역이라 ROS 자체에서 뭔가 �
   &lt;/li&gt;
 &lt;/ul&gt;
 
+&lt;h4 id=&quot;2-middleware-layer&quot;&gt;2. Middleware Layer&lt;/h4&gt;
+&lt;hr /&gt;
+&lt;p&gt;미들웨어 부분은 위에서 언급했던 내용의 연장선이다. ROS1에서의 통신방식이 ROS_MASTER의 장부 등록으로 인한 &lt;strong&gt;구독 및 발간&lt;/strong&gt; 형태의 통신 모델이었다고 한다면, ROS2의 DDS 모델을 따라, 미들웨어 중심의 &lt;strong&gt;구독 및 발간&lt;/strong&gt; 모델로 변경되면서 추상적인 통신형태를 가지고 간다고 이해 할 수있다. &lt;a href=&quot;#h4-id1-application-layer-2281-application-layerh4&quot;&gt;Application Layer&lt;/a&gt; 부분을 제대로 읽었다면 굳이 참고하지 않더라도 당연하다 라고 이해하면 될것같다.&lt;/p&gt;
+
+&lt;h4 id=&quot;3-지원-os&quot;&gt;3. 지원 OS&lt;/h4&gt;
+&lt;hr /&gt;
+&lt;p&gt;DDS 통신의 특징이 무엇인가, 운영체제와 HW로 부터 독립적인 통신 모델을 수립하는것이다. 기존에도 ROS1에서 리눅스 한정이긴 했으나, 안드로이드 및 기타 리눅스 운영체제 위에서는 자유롭게 통신이 가능하였다. ROS2에서는 이보다 더 넓게, Personal한 영역까지 커버리지 할 수준의 범위로 늘었다. Window 및 IOS 등 더이상 운영체제의 틀에 고립되지 않은 완벽하게 자유로운 미들웨어로 운영되기 때문에 ROS2의 동작영역은 운영체제를 더이상 고려하지 않아도 되게 되었다.&lt;/p&gt;
+
+&lt;h4 id=&quot;4-지원언어&quot;&gt;4. 지원언어&lt;/h4&gt;
+&lt;hr /&gt;
+&lt;p&gt;2020년 1월 1일 부로 Python 2.7이 지원을 종료하면서, 언어의 변화에 맞춰 ROS2 역시 지원 중단된 언어들을 걷어내고 Python3 로 넘어갔다. 사실 시대가 진화하면 언어도 같이 진화하는것은 당연하므로 이는 당연한 수순이라고 여겨진다. 운영체제 역시 거기에 맞춰 지원 언어에 대해 맞춰 같을 것이다. 현재 ROS2 에서는 Python3 및 C++ 14,17 을 지원하도록 설계되어있다. rclpy,rclcpp 운용 시 참고하면 될것이다.&lt;/p&gt;
+
+&lt;h4 id=&quot;다중-node-지원-여부-및-roslaunch의-메커니즘&quot;&gt;다중 Node 지원 여부 및 roslaunch의 메커니즘&lt;/h4&gt;
+&lt;hr /&gt;
+&lt;p&gt;아래 글을 참조하면 될것같다.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;#4-ros-2-와-그-이전의-개념-탑재하기&quot;&gt;참고&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;이로서, ROS1과 ROS2의 기본적인? 차이점에 대해 한번 알아보았다. 좀더 구체적이고 자세한 글은 시간 날때마다 하나씩 정리해서 올리도록 하겠다.  긴 글인 만큼 정확한 이해가 요구되며, 필자 역시 매우 미흡한 ROS 입문자로서 잘못된 정보나 오기가 있을 경우 메일로 알려주시면 감사하겠다.&lt;/p&gt;
+
 &lt;h3 id=&quot;ros-2-의-명령어-특징&quot;&gt;ROS 2 의 명령어 특징&lt;/h3&gt;
+&lt;hr /&gt;
 &lt;ul&gt;
   &lt;li&gt;ros2 node list
     &lt;ul&gt;
@@ -282,7 +309,8 @@ DDS 개념은 네트워크프로그래밍 영역이라 ROS 자체에서 뭔가 �
 &lt;p&gt;이러한 형태의 번거로운 구조를 ROS2에서는 보다 간편하고 쉽게 풀어나가는 모습을 보여준다.&lt;/p&gt;
 
 &lt;h1 id=&quot;4-ros-2-와-그-이전의-개념-탑재하기&quot;&gt;4. ROS 2 와 그 이전의 개념 탑재하기&lt;/h1&gt;
-&lt;p&gt;ROS 1 시절부터 배워왔던 개념을 다시 정립하고자 해당 내용을 보충하고자 한다.&lt;/p&gt;
+&lt;p&gt;ROS 1 시절부터 배워왔던 개념을 다시 정립하고자 해당 내용을 보충하고자 한다. &lt;br /&gt;
+이 컬럼은 과거에 잠시 기록해 두엇던 내용이므로 추후 따로 분리하여 올릴 예정이다.&lt;/p&gt;
 
 &lt;h4 id=&quot;ros-에서-pkg-란-무엇인가&quot;&gt;ROS 에서 pkg 란 무엇인가?&lt;/h4&gt;
 
@@ -384,4 +412,4 @@ rclpy = Python 클라이언트 라이브러리
 &lt;p&gt;&lt;a href=&quot;https://blog.naver.com/neos_rtos/30173805276&quot;&gt;한컴MDS-Blog&lt;/a&gt;&lt;br /&gt;
 &lt;a href=&quot;http://www.hellot.net/new_hellot/magazine/magazine_read.html?code=201&amp;amp;sub=002&amp;amp;idx=44385&amp;amp;page=239&amp;amp;list=all&quot;&gt;첨단-헬로티&lt;/a&gt;&lt;br /&gt;
 &lt;a href=&quot;https://discourse.ros.org/t/ros-2-seminar/12872&quot;&gt;표윤석박사님_ROS2_Seminar&lt;/a&gt;&lt;br /&gt;
-&lt;a href=&quot;https://discourse.ros.org/&quot;&gt;ROS-Discourse&lt;/a&gt;&lt;/p&gt;</content><author><name>Kim Gi Wang(Dale Kim)</name></author><summary type="html">ROS1 과 ROS2의 차이 그리고 개념정리 목 차</summary></entry></feed>
+&lt;a href=&quot;https://discourse.ros.org/&quot;&gt;ROS-Discourse&lt;/a&gt;&lt;/p&gt;</content><author><name>Kim Gi Wang(Dale Kim)</name></author><summary type="html">ROS1 과 ROS2의 차이 그리고 개념정리 목 차 ※ ROS1 과 ROS2 에 대한 차이를 알고 싶으신 분은 1번만 참고하시면 됩니다.</summary></entry></feed>
