@@ -1,310 +1,4 @@
-<!doctype html>
-<!--
-  Minimal Mistakes Jekyll Theme 4.19.3 by Michael Rose
-  Copyright 2013-2019 Michael Rose - mademistakes.com | @mmistakes
-  Free for personal and commercial use under the MIT license
-  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
--->
-<html lang="ko" class="no-js">
-  <head>
-    <meta charset="utf-8">
-
-<!-- begin _includes/seo.html --><title>Smart Factory 에 대한 고찰 - Groot Robot Blog</title>
-<meta name="description" content="Node 개발과 ROS/ROS2를 프로젝트에 적용중인 Developer">
-
-
-  <meta name="author" content="Kim Gi Wang(Dale Kim)">
-
-
-<meta property="og:type" content="website">
-<meta property="og:locale" content="ko_KR">
-<meta property="og:site_name" content="Groot Robot Blog">
-<meta property="og:title" content="Smart Factory 에 대한 고찰">
-<meta property="og:url" content="http://localhost:4000/archive/">
-
-
-  <meta property="og:description" content="Node 개발과 ROS/ROS2를 프로젝트에 적용중인 Developer">
-
-
-
-
-
-
-
-
-
-
-
-  
-
-  
-
-
-<link rel="canonical" href="http://localhost:4000/archive/">
-
-
-
-
-<script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    
-      "@type": "Person",
-      "name": "Kim Gi Wang(Dale Kim)",
-      "url": "http://localhost:4000/"
-    
-  }
-</script>
-
-
-
-
-
-
-<!-- end _includes/seo.html -->
-
-
-<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Groot Robot Blog Feed">
-
-<!-- https://t.co/dKP3o1e -->
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<script>
-  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
-</script>
-
-<!-- For all browsers -->
-<link rel="stylesheet" href="/assets/css/main.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
-
-<!--[if IE]>
-  <style>
-    /* old IE unsupported flexbox fixes */
-    .greedy-nav .site-title {
-      padding-right: 3em;
-    }
-    .greedy-nav button {
-      position: absolute;
-      top: 0;
-      right: 0;
-      height: 100%;
-    }
-  </style>
-<![endif]-->
-
-
-
-    <!-- start custom head snippets -->
-
-<!-- insert favicons. use https://realfavicongenerator.net/ -->
-
-<!-- end custom head snippets -->
-
-  </head>
-
-  <body class="layout--archive">
-    <nav class="skip-links">
-  <h2 class="screen-reader-text">Skip links</h2>
-  <ul>
-    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
-    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
-    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
-  </ul>
-</nav>
-
-    <!--[if lt IE 9]>
-<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
-<![endif]-->
-
-    
-
-<div class="masthead">
-  <div class="masthead__inner-wrap">
-    <div class="masthead__menu">
-      <nav id="site-nav" class="greedy-nav">
-        
-        <a class="site-title" href="/">
-          ROS Developer Blog
-          <span class="site-subtitle">로봇운영체제의 모든것을 담아</span>
-        </a>
-        <ul class="visible-links"><li class="masthead__menu-item">
-              <a href="/archive/">Archive</a>
-            </li><li class="masthead__menu-item">
-              <a href="/categories/">Categories</a>
-            </li><li class="masthead__menu-item">
-              <a href="/tags/">Tags</a>
-            </li></ul>
-        
-        <button class="greedy-nav__toggle hidden" type="button">
-          <span class="visually-hidden">토글 메뉴</span>
-          <div class="navicon"></div>
-        </button>
-        <ul class="hidden-links hidden"></ul>
-      </nav>
-    </div>
-  </div>
-</div>
-
-
-    <div class="initial-content">
-      
-
-
-  
-    
-
-
-
-<nav class="breadcrumbs">
-  <ol itemscope itemtype="https://schema.org/BreadcrumbList">
-    
-    
-    
-      
-        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-          <a href="http://localhost:4000/" itemprop="item"><span itemprop="name">Home</span></a>
-          <meta itemprop="position" content="1" />
-        </li>
-        <span class="sep">/</span>
-      
-      
-        <li class="current">Smart Factory 에 대한 고찰</li>
-      
-    
-  </ol>
-</nav>
-
-  
-
-
-<div id="main" role="main">
-  
-  <div class="sidebar sticky">
-  
-
-
-<div itemscope itemtype="https://schema.org/Person">
-
-  
-    <div>
-      
-        <img src="/assets/images/me.jpg" alt="Kim Gi Wang(Dale Kim)" itemprop="image">
-      
-    </div>
-  
-
-  <div class="author__content">
-    
-      <h3 class="author__name" itemprop="name">Kim Gi Wang(Dale Kim)</h3>
-    
-    
-      <div class="author__bio" itemprop="description">
-        <p>ROS 개발과 관련된 글을 올리는 장소입니다 <br /> 각종 의견 및 피드백 환영합니다.</p>
-
-      </div>
-    
-  </div>
-
-  <div class="author__urls-wrapper">
-    <button class="btn btn--inverse">팔로우 </button>
-    <ul class="author__urls social-icons">
-      
-        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
-          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name">Republic of KOREA</span>
-        </li>
-      
-
-      
-        
-          
-            <li><a href="kking9444@gmail.com" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span></a></li>
-          
-        
-          
-            <li><a href="https://gwkim9444.github.io" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-link" aria-hidden="true"></i><span class="label">Website</span></a></li>
-          
-        
-          
-        
-          
-        
-          
-            <li><a href="https://github.com/gwkim9444" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
-          
-        
-          
-        
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      <!--
-  <li>
-    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
-      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
-    </a>
-  </li>
--->
-    </ul>
-  </div>
-</div>
-
-  
-  </div>
-
-
-
-  <div class="archive">
-    
-      <h1 id="page-title" class="page__title">Smart Factory 에 대한 고찰</h1>
-    
-    <h1 id="스마트팩토리를-도입하는-이유회사의-입장">스마트팩토리를 도입하는 이유(회사의 입장)</h1>
+I"y<h1 id="스마트팩토리를-도입하는-이유회사의-입장">스마트팩토리를 도입하는 이유(회사의 입장)</h1>
 <hr />
 <ul>
   <li>스마트팩토리의 도입 목적</li>
@@ -460,7 +154,7 @@
 </blockquote>
 
 <h3 id="머신러닝을-통한-개와-고양이-분류">머신러닝을 통한 개와 고양이 분류</h3>
-<p><img src="https://github.com/gwkim9444/gwkim9444.github.io/blob/master/_pages/img/machineLearning.png?raw=true" alt="Machine" /></p>
+<p><img src="./img/machineLearning.png" alt="Machine" /></p>
 
 <h3 id="딥러닝-통한-개와-고양이-분류">딥러닝 통한 개와 고양이 분류</h3>
 <p><img src="https://github.com/gwkim9444/gwkim9444.github.io/blob/master/_pages/img/DeepLearning.png?raw=true" alt="Machine" /></p>
@@ -519,7 +213,7 @@ ZVEI - 독일 전자전기산업 협회</p>
 
 <p>Industry4.0 보급/확산이 핵심임을 강조하며, road map을 하기와 같이 규정 및 정의(표준화) 하였음.</p>
 
-<p><img src="https://github.com/gwkim9444/gwkim9444.github.io/blob/master/_pages/img/bitkom.png?raw=true" alt="DFKA" /></p>
+<p><img src="./img/bitkom.png" alt="DFKA" /></p>
 
 <p>각 기관은 제도적 규제 및 보안 시스템이 확립된 조건하에 표준화된 architecture를 제정하고, 표준화된 architecture 구성하는 주요 항목별 구현 로드맵을 제시하였음.</p>
 
@@ -605,7 +299,7 @@ ZVEI - 독일 전자전기산업 협회</p>
 
 <h4 id="3-industry-40-에서의-entire-life-cycle">3. Industry 4.0 에서의 Entire Life Cycle</h4>
 <hr />
-<p><img src="https://github.com/gwkim9444/gwkim9444.github.io/blob/master/_pages/img/Systems_Development_Life_Cycle.png?raw=true" alt="LF" /></p>
+<p><img src="./img/Systems_Development_Life_Cycle.png" alt="LF" /></p>
 
 <h5 id="end-to-end-engineering-">End-to-end Engineering ?</h5>
 
@@ -620,7 +314,7 @@ ZVEI - 독일 전자전기산업 협회</p>
 
 <p>이는 Labview Simulation과 유사함. Labview는 Sensor I/O를 지원하고, 물리적으로 연동된 Sensor/Controller를 컴퓨터 상에서 Model로 표현이 가능하며, 해당 Model들을 활용해 사용자가 의도한 작업을 수행함.</p>
 
-<p><img src="https://github.com/gwkim9444/gwkim9444.github.io/blob/master/_pages/img/labview.png?raw=true" alt="NI" /><br />
+<p><img src="./img/labview.png" alt="NI" /><br />
 <strong>Labview에서 사용한 SCADA의 예</strong></p>
 
 <blockquote>
@@ -633,7 +327,7 @@ ZVEI - 독일 전자전기산업 협회</p>
 
 <p>System Engineer들 사이에서는 이러한 개발과정을 <code class="language-plaintext highlighter-rouge">V-model</code>로 표시하고, 개념 스케치 및 요구사항 발굴 시 System life cycle 전체 관점을 염두해 두고 진행하게 됨.</p>
 
-<p><img src="https://github.com/gwkim9444/gwkim9444.github.io/blob/master/_pages/img/v-model.png?raw=true" alt="v-model" /></p>
+<p><img src="./img/v-model.png" alt="v-model" /></p>
 
 <p><code class="language-plaintext highlighter-rouge">ISO15288</code> 표준에서 제시되는 생명주기에 대한 활동은 위 V-model에 상에서 수행되는 행동들을 정리함</p>
 
@@ -668,7 +362,7 @@ ZVEI - 독일 전자전기산업 협회</p>
 
 <h4 id="vertical-integration의-정의">Vertical Integration의 정의</h4>
 <hr />
-<p><img src="https://github.com/gwkim9444/gwkim9444.github.io/blob/master/_pages/img/vertical.png?raw=true" alt="VF" /><br />
+<p><img src="./img/vertical.png" alt="VF" /><br />
 ` ISA-95(ISO/IEC 62264)<code class="language-plaintext highlighter-rouge"> 표준 공장 계층 구조(</code>Sample : Amberg 공장`)</p>
 <h5 id="vertical-integration-이란"><strong>Vertical Integration</strong> 이란?</h5>
 
@@ -759,7 +453,7 @@ ZVEI - 독일 전자전기산업 협회</p>
   </li>
 </ol>
 
-<p><img src="https://github.com/gwkim9444/gwkim9444.github.io/blob/master/_pages/img/Rami.png?raw=true" alt="RM" /><br />
+<p><img src="./img/Rami.png" alt="RM" /><br />
 아키텍쳐가 개발되기 이전에도 이미 일련의 표준들은 쭉 존재해 왔으나, 전체 Industry 4.0 View 중 일부만 반영향 경향이 있었으며 이에 RAMI4.0이 등장함.</p>
 
 <h2 id="reference-architecture-model-for-industry-40rami-40의-제정-및-목적">Reference architecture model for industry 4.0(RAMI 4.0)의 제정 및 목적</h2>
@@ -777,7 +471,7 @@ ZVEI - 독일 전자전기산업 협회</p>
   </ol>
 </blockquote>
 
-<p><img src="https://github.com/gwkim9444/gwkim9444.github.io/blob/master/_pages/img/Rami4.0.png?raw=true" alt="RM" /></p>
+<p><img src="./img/Rami4.0.png" alt="RM" /></p>
 
 <p><strong>Vertical Integration은 해당 Architecture에 Layer와 Hierarchy Levels로 표현되어 있다.</strong></p>
 
@@ -843,74 +537,5 @@ Layer 형태로 표현하는것은 다음과 같은 의미가 있다.  &gt;실�
 
 <h4 id="the-purpose-of-opc-ua">The Purpose of OPC UA</h4>
 
-<p><img src="https://github.com/gwkim9444/gwkim9444.github.io/blob/master/_pages/img/purpose_opc.png?raw=true" alt="RM" /></p>
-
-<p>OPC UA는 산업용 표준 프로토콜 수립을 위해 도입된 것으로 Tag 형태의 구조를 통한 각 디바이스 별 난재되어있는 산업 표준을 통합하고자 나온 미들웨어 프로토콜이다. OPC는 현재도 개발 및 발전 진행 중에 있으며, 초창기에는 OPC-DA 통신으로 시작되었다. DA 통신의 경우 Window 에서만 동작하도록 설계되어 있었다.</p>
-
-<p>당최 산업용 프로토콜이 필드에서 리눅스로 운영 될 경우 사용자들이 친숙하지 않을까 싶어 OS에 비교적 친숙한 GUI 형태의 설비들이 도입되다 보니, 급하게 도입된 것은 아무래도 윈도우에서 지원하는 기본통신 중 <code class="language-plaintext highlighter-rouge">마이크로소프트</code>에서 제작한 DCOM 통신을 도입 하지 않았나 싶다.<br />
-DCOM과 유사한 통신으로는 비동기 통신인 CORBA가 있다.</p>
-
-<p><img src="https://github.com/gwkim9444/gwkim9444.github.io/blob/master/_pages/img/opc_interface.png?raw=true" alt="RM" /></p>
-
-<p>아무튼 이 OPC-DA는 진화를 거듭하여, OPC-UA로 진화했고 더이상 OS와 HW에 귀속되지 않고 어떤 디바이스에도 탑재되어 운영되는 형태의 프로토콜로 자리잡고있다. 아두이노, 라즈베리 파이 같은 소형 디바이스 내에도 쉽게 태그서버를 올릴 수 있고, 각 메모리 디바이스에 올라오는 데이터를 쉽게 태그와 인터페이싱 할 수 있도록 만들어졌다.</p>
-
-<p>실제로 태그를 설계하고 운영하는것은 상업용 OPC-UA 서버/클라이언트를 활용해 대체 가능하기도 하지만, 직접 <a href="https://opcfoundation.org/">OPC 재단</a>에서 C++,JAVA 등으로 구성된 자료를 참고해 서버를 구성하고 클라이언트도 만들어보는 체험은 꼭 해봤으면 좋겠다.</p>
-
-  </div>
-</div>
-    </div>
-
-    
-
-    <div id="footer" class="page__footer">
-      <footer>
-        <!-- start custom footer snippets -->
-
-<!-- end custom footer snippets -->
-        <div class="page__footer-follow">
-  <ul class="social-icons">
-    
-      <li><strong>팔로우 :</strong></li>
-    
-
-    
-      
-        
-      
-        
-      
-        
-          <li><a href="https://github.com/gwkim9444" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
-        
-      
-        
-      
-        
-      
-        
-      
-    
-
-    <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> 피드</a></li>
-  </ul>
-</div>
-
-<div class="page__footer-copyright">&copy; 2020 Groot Robot Blog. Powered by <a href="https://github.com/gwkim9444" rel="nofollow">Dale Kim</a></div>
-
-      </footer>
-    </div>
-
-    
-  <script src="/assets/js/main.min.js"></script>
-
-
-
-
-
-
-
-
-
-
-  </body>
-</html>
+<p><img src=".img/../img/purpose_opc.png" alt="RM" /></p>
+:ET

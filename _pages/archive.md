@@ -5,6 +5,7 @@ permalink: "/archive/"
 author_profile: true"
 ---
 
+
 # 스마트팩토리를 도입하는 이유(회사의 입장)
 ---  
 - 스마트팩토리의 도입 목적
@@ -50,7 +51,7 @@ author_profile: true"
 # 인공지능 그리고 머신러닝과 딥러닝
 ---
 ### AI > Machine Learing > Deep Learning
-![Relation](./img/relation.png)
+![Relation](https://github.com/gwkim9444/gwkim9444.github.io/blob/master/_pages/img/relation.png?raw=true)
 
 >__※ 인공지능(AI)__  
     인간이 지닌 지적 능력을 인공적으로 구현한것을 모두 인공지능이라 일컫음. 
@@ -58,7 +59,7 @@ author_profile: true"
 >__※ 머신러닝(Machine Learing)__  
     "기계학습"으로  기계가 직접 데이터를 학습 함으로서, 그 속에 숨겨진 일련의 규칙성을 찾음. 우리가 가지는 사례 형식의 데이터를 컴퓨터가 학습해, 그를 기반으로 새 데이터를 평가, 예상하고 이를 우리가 활용 할 수 있게 함.  
 
-![Machine](./img/330px-Kernel_Machine.svg.png)
+![Machine](https://github.com/gwkim9444/gwkim9444.github.io/blob/master/_pages/img/330px-Kernel_Machine.svg.png?raw=true)
 
 예를 들면, 감기 걸린 환자들의 체온과 건강한 사람의 체온 데이터를 컴퓨터에게 학습(메모리에 저장) 한 후 특정 체온을 제시 할 때, 그 사람이 감기에 걸렸는지 여부를 판독(알고리즘에 의한 결론)으로 판독하게 하는것이 대표적인 기계 학습의 예임.
 
@@ -101,10 +102,10 @@ author_profile: true"
 >2. 주로 인공신경망 구조를 사용하여 __학습__ 한다.
 
 ### 머신러닝을 통한 개와 고양이 분류
-![Machine](./img/machineLearning.png)
+![Machine](https://github.com/gwkim9444/gwkim9444.github.io/blob/master/_pages/img/machineLearning.png?raw=true)
 
 ### 딥러닝 통한 개와 고양이 분류
-![Machine](./img/DeepLearning.png)
+![Machine](https://github.com/gwkim9444/gwkim9444.github.io/blob/master/_pages/img/DeepLearning.png?raw=true)
 
 > 딥러닝 알고리즘 목록
 > - 딥러닝(심층학습)
@@ -121,12 +122,12 @@ __`Industry 4.0`__
 
 >과거 세대부터 지금까지 산업은 지속적으로 변화되어 왔으며, 자동화시대를 지나 IT 기술의 발달이 무어의 법칙에 따라 HW 성능이 진화하면서 뛰어난 퍼포먼스를 내는 SW가 등장하기 시작함.  
 
-![4th_industry](./img/4th_industry.png)  
+![4th_industry](https://github.com/gwkim9444/gwkim9444.github.io/blob/master/_pages/img/4th_industry.png?raw=true)  
 >이에따라, 등장한것이 IOTPS(Internet of Thing, People, Service)가 확립되어 가치/비지니스 시장 확대에 주목하기 시작했으며, 사람들은 실재와 가상을 연동하는 기술인 CPS(Cyber Physical System)의 영역까지 확보하고자 노력하고 있음.  
 
 ## Why Industry 4.0?
 
-![DFKA](./img/DFKA.png)  
+![DFKA](https://github.com/gwkim9444/gwkim9444.github.io/blob/master/_pages/img/DFKA.png?raw=true)  
 
 
 >1. 숙련된 작업자를 찾기 어렵다
@@ -144,7 +145,7 @@ __`Industry 4.0`__
 
 Industry4.0 보급/확산이 핵심임을 강조하며, road map을 하기와 같이 규정 및 정의(표준화) 하였음.  
 
-![DFKA](./img/bitkom.png)  
+![DFKA](https://github.com/gwkim9444/gwkim9444.github.io/blob/master/_pages/img/bitkom.png?raw=true)  
 
 각 기관은 제도적 규제 및 보안 시스템이 확립된 조건하에 표준화된 architecture를 제정하고, 표준화된 architecture 구성하는 주요 항목별 구현 로드맵을 제시하였음.   
 
@@ -159,7 +160,7 @@ Industry4.0 보급/확산이 핵심임을 강조하며, road map을 하기와 �
 |`New Social Infrastructures for work`|Industry 4.0이 실현된 환경 하에서 근무하는 근로자들이 더 나은 조건에서 일하도록 하는 기술들의 집약(VR기반 훈련,multi-modal Interface with machine)| 
 |`Continual development of cross-sectional technologies`|앞에서 언급된 architecture들이 서로 유기적으로 상호작용이 잘되도록 개발이 진행되는 영역|  
 
-![DFKA](./img/4th.png)  
+![DFKA](https://github.com/gwkim9444/gwkim9444.github.io/blob/master/_pages/img/4th.png?raw=true)  
 
 #### 1. Horizontal Integration의 정의  
 ---
@@ -180,7 +181,7 @@ Industry4.0 보급/확산이 핵심임을 강조하며, road map을 하기와 �
 
 #### 3. Industry 4.0 에서의 Entire Life Cycle
 ---
-![LF](./img/Systems_Development_Life_Cycle.png)  
+![LF](https://github.com/gwkim9444/gwkim9444.github.io/blob/master/_pages/img/Systems_Development_Life_Cycle.png?raw=true)  
 
 ##### End-to-end Engineering ?
 
@@ -193,7 +194,7 @@ Industry4.0 보급/확산이 핵심임을 강조하며, road map을 하기와 �
 
 이는 Labview Simulation과 유사함. Labview는 Sensor I/O를 지원하고, 물리적으로 연동된 Sensor/Controller를 컴퓨터 상에서 Model로 표현이 가능하며, 해당 Model들을 활용해 사용자가 의도한 작업을 수행함.  
 
-![NI](./img/labview.png)  
+![NI](https://github.com/gwkim9444/gwkim9444.github.io/blob/master/_pages/img/labview.png?raw=true)  
 __Labview에서 사용한 SCADA의 예__
 
 > 단순히, modeling에서 프로그램이 끝나는 것이 아닌, 데이터 통합 작업이 수반되어야 함. 제품 개발/제품 생산 단계에서 활용되는 데이터 항목들은 다를지어도 연계되는 항목을 고려해, 생산/설계 분야에서 협업이 이뤄지려면 작업진행을 꾸준히 해주어야 됨  
@@ -204,13 +205,13 @@ __Labview에서 사용한 SCADA의 예__
 
 System Engineer들 사이에서는 이러한 개발과정을 `V-model`로 표시하고, 개념 스케치 및 요구사항 발굴 시 System life cycle 전체 관점을 염두해 두고 진행하게 됨.  
 
-![v-model](./img/v-model.png)  
+![v-model](https://github.com/gwkim9444/gwkim9444.github.io/blob/master/_pages/img/v-model.png?raw=true)  
 
 `ISO15288` 표준에서 제시되는 생명주기에 대한 활동은 위 V-model에 상에서 수행되는 행동들을 정리함  
 
 >각 Life Cycle에 대한 규격은 시스템엔지니어링 표준인 `ISO15288, EIA632, IEEE1220`을 참조해서 진행하면 될것
 
-![LFC](./img/LFC.png)  
+![LFC](https://github.com/gwkim9444/gwkim9444.github.io/blob/master/_pages/img/LFC.png?raw=true)  
 
 | 표 준 | Description |
 | :--------: | :--------: | 
@@ -221,7 +222,7 @@ System Engineer들 사이에서는 이러한 개발과정을 `V-model`로 표시
 
 #### Vertical Integration의 정의
 ---  
-![VF](./img/vertical.png)  
+![VF](https://github.com/gwkim9444/gwkim9444.github.io/blob/master/_pages/img/vertical.png?raw=true)  
 ` ISA-95(ISO/IEC 62264)` 표준 공장 계층 구조(`Sample : Amberg 공장`)
 ##### __Vertical Integration__ 이란?
 
@@ -262,7 +263,7 @@ System Engineer들 사이에서는 이러한 개발과정을 `V-model`로 표시
 1. Reference Architecture가 만들어진 배경  
 >Industry 4.0 와 맞물리면서 수많은 단체에서 각자의 전공/주력 분야에서의 경험을 바탕으로 표준 및 기술들을 개발 했으나, 소통없는 기술로 표준을 정하는것 자체가 무의미했으며, 이에따라 Industry 4.0 platform의 참조 아키텍처를 개발하고 다양한 기관들이 공유하게 함으로서, 개발 결과물이 참조 아키텍처 상에 반영될 수 있도록 하였음.  
 
-![RM](./img/Rami.png)  
+![RM](https://github.com/gwkim9444/gwkim9444.github.io/blob/master/_pages/img/Rami.png?raw=true)  
 아키텍쳐가 개발되기 이전에도 이미 일련의 표준들은 쭉 존재해 왔으나, 전체 Industry 4.0 View 중 일부만 반영향 경향이 있었으며 이에 RAMI4.0이 등장함.  
 
 ## Reference architecture model for industry 4.0(RAMI 4.0)의 제정 및 목적  
@@ -276,7 +277,7 @@ __산재되어있는 표준과 요소기술을 종합해 정리해 세계 모든
 >4. Industry 4.0의 Use Case 발굴 및 이의 반영  
 >5. 다양한 요소기술들의 확인 및 반영  
 
-![RM](./img/Rami4.0.png)  
+![RM](https://github.com/gwkim9444/gwkim9444.github.io/blob/master/_pages/img/Rami4.0.png?raw=true)  
 
 __Vertical Integration은 해당 Architecture에 Layer와 Hierarchy Levels로 표현되어 있다.__  
 
@@ -290,7 +291,7 @@ __Vertical Integration은 해당 Architecture에 Layer와 Hierarchy Levels로 �
     Layer 형태로 표현하는것은 다음과 같은 의미가 있다. 
 >실제 우리가 RAMI Architecture에 기반하여 실 공장을 구현했다 치면, 만약 어떤 하나의 PLC에 지원하는 정보 모델이라던지 통신 프로토콜이 바뀔때 ( RAMI Layer 중 하나가 바뀔때 ) __호환문제가 발생하지 않고 상호 운용성을 확보한 채 무난히 돌아가는것을 의미한다.__ 라고 설명한다. 이러한 표현은 각 엔지니어간 구분되어있는 레이어로 소통이 가능하며 수정 사항이 발생해도 상기 레이어에 엔지니어로 쉽게 운용해 유지보수가 가능하다.  
 
-![RM](./img/Detail_RAMI.png)  
+![RM](https://github.com/gwkim9444/gwkim9444.github.io/blob/master/_pages/img/Detail_RAMI.png?raw=true)  
 
     2.3 RAMI Layer Structure
 
@@ -311,4 +312,15 @@ __Vertical Integration은 해당 Architecture에 Layer와 Hierarchy Levels로 �
 
 #### The Purpose of OPC UA
 
-![RM](.img/../img/purpose_opc.png)
+![RM](https://github.com/gwkim9444/gwkim9444.github.io/blob/master/_pages/img/purpose_opc.png?raw=true)
+
+OPC UA는 산업용 표준 프로토콜 수립을 위해 도입된 것으로 Tag 형태의 구조를 통한 각 디바이스 별 난재되어있는 산업 표준을 통합하고자 나온 미들웨어 프로토콜이다. OPC는 현재도 개발 및 발전 진행 중에 있으며, 초창기에는 OPC-DA 통신으로 시작되었다. DA 통신의 경우 Window 에서만 동작하도록 설계되어 있었다.  
+
+당최 산업용 프로토콜이 필드에서 리눅스로 운영 될 경우 사용자들이 친숙하지 않을까 싶어 OS에 비교적 친숙한 GUI 형태의 설비들이 도입되다 보니, 급하게 도입된 것은 아무래도 윈도우에서 지원하는 기본통신 중 `마이크로소프트`에서 제작한 DCOM 통신을 도입 하지 않았나 싶다.  
+DCOM과 유사한 통신으로는 비동기 통신인 CORBA가 있다.  
+
+![RM](https://github.com/gwkim9444/gwkim9444.github.io/blob/master/_pages/img/opc_interface.png?raw=true)  
+
+아무튼 이 OPC-DA는 진화를 거듭하여, OPC-UA로 진화했고 더이상 OS와 HW에 귀속되지 않고 어떤 디바이스에도 탑재되어 운영되는 형태의 프로토콜로 자리잡고있다. 아두이노, 라즈베리 파이 같은 소형 디바이스 내에도 쉽게 태그서버를 올릴 수 있고, 각 메모리 디바이스에 올라오는 데이터를 쉽게 태그와 인터페이싱 할 수 있도록 만들어졌다.  
+
+실제로 태그를 설계하고 운영하는것은 상업용 OPC-UA 서버/클라이언트를 활용해 대체 가능하기도 하지만, 직접 [OPC 재단](https://opcfoundation.org/)에서 C++,JAVA 등으로 구성된 자료를 참고해 서버를 구성하고 클라이언트도 만들어보는 체험은 꼭 해봤으면 좋겠다.  
