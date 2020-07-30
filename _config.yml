@@ -19,7 +19,7 @@ locale                   : "ko-KR"
 title                    : "Groot Robot Blog"
 title_separator          : "-"
 subtitle                 : "로봇운영체제의 모든것을 담아" # site tagline that appears below site title in masthead
-name                     : "Kim Gi Wang(Dale Kim)"
+name                     : "Dale Kim"
 description              : "Node 개발과 ROS/ROS2를 프로젝트에 적용중인 Developer"
 url                      : "https://gwkim9444.github.io/" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  :  # the subpath of your site, e.g. "/blog"
@@ -93,8 +93,8 @@ analytics:
 
 # Site Author
 author:
-  name             : "Kim Gi Wang(Dale Kim)"
-  avatar           : "/assets/images/me.jpg"
+  name             : "Dale Kim"
+  avatar           : "/assets/images/groot.jpeg"
   bio              : "ROS 개발과 관련된 글을 올리는 장소입니다 <br> 각종 의견 및 피드백 환영합니다."
   location         : "Republic of KOREA"
   email            :
