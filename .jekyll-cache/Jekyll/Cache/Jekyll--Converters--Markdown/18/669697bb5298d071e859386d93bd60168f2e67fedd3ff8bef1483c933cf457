@@ -1,4 +1,4 @@
-I"�_<h1 id="ros1-과-ros2의-차이-그리고-개념정리">ROS1 과 ROS2의 차이 그리고 개념정리</h1>
+I"�_<h1 id="ros1-과-ros2의-차이-그리고-개념정리">ROS1 과 ROS2의 차이 그리고 개념정리</h1>
 <hr />
 <h2 id="목-차">목 차</h2>
 
@@ -10,7 +10,7 @@
 <h2 id="1-ros-1-과-ros-2-의-차이점-비교">1. ROS 1 과 ROS 2 의 차이점 비교</h2>
 
 <h3 id="아키텍쳐-비교">아키텍쳐 비교</h3>
-<p><img src="./picture/ros_diffrence.png" alt="Relation" /></p>
+<p><img src="//gwkim9444.github.io/_posts/picture/ros_diffrence.png" alt="Relation" /></p>
 
 <table>
   <thead>

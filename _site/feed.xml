@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.1.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-07-30T11:24:45+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Groot Robot Blog</title><subtitle>Node 개발과 ROS/ROS2를 프로젝트에 적용중인 Developer</subtitle><author><name>Kim Gi Wang(Dale Kim)</name></author><entry><title type="html">ROS1과 ROS2의 차이</title><link href="http://localhost:4000/ros1-ros2/" rel="alternate" type="text/html" title="ROS1과 ROS2의 차이" /><published>2020-07-30T00:00:00+09:00</published><updated>2020-07-30T00:00:00+09:00</updated><id>http://localhost:4000/ros1-ros2</id><content type="html" xml:base="http://localhost:4000/ros1-ros2/">&lt;h1 id=&quot;ros1-과-ros2의-차이-그리고-개념정리&quot;&gt;ROS1 과 ROS2의 차이 그리고 개념정리&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.1.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-07-30T11:33:08+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Groot Robot Blog</title><subtitle>Node 개발과 ROS/ROS2를 프로젝트에 적용중인 Developer</subtitle><author><name>Kim Gi Wang(Dale Kim)</name></author><entry><title type="html">ROS1과 ROS2의 차이</title><link href="http://localhost:4000/ros1-ros2/" rel="alternate" type="text/html" title="ROS1과 ROS2의 차이" /><published>2020-07-30T00:00:00+09:00</published><updated>2020-07-30T00:00:00+09:00</updated><id>http://localhost:4000/ros1-ros2</id><content type="html" xml:base="http://localhost:4000/ros1-ros2/">&lt;h1 id=&quot;ros1-과-ros2의-차이-그리고-개념정리&quot;&gt;ROS1 과 ROS2의 차이 그리고 개념정리&lt;/h1&gt;
 &lt;hr /&gt;
 &lt;h2 id=&quot;목-차&quot;&gt;목 차&lt;/h2&gt;
 
@@ -10,7 +10,7 @@
 &lt;h2 id=&quot;1-ros-1-과-ros-2-의-차이점-비교&quot;&gt;1. ROS 1 과 ROS 2 의 차이점 비교&lt;/h2&gt;
 
 &lt;h3 id=&quot;아키텍쳐-비교&quot;&gt;아키텍쳐 비교&lt;/h3&gt;
-&lt;p&gt;&lt;img src=&quot;./picture/ros_diffrence.png&quot; alt=&quot;Relation&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;//gwkim9444.github.io/_posts/picture/ros_diffrence.png&quot; alt=&quot;Relation&quot; /&gt;&lt;/p&gt;
 
 &lt;table&gt;
   &lt;thead&gt;
@@ -57,7 +57,7 @@
 &lt;h4 id=&quot;1-application-layer&quot;&gt;1. Application Layer&lt;/h4&gt;
 
 &lt;h5 id=&quot;--ros-1-의-통신-방식&quot;&gt;- ROS 1 의 통신 방식&lt;/h5&gt;
-&lt;p&gt;&lt;img src=&quot;./picture/6.png&quot; alt=&quot;Relation&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;../_posts/picture/6.png&quot; alt=&quot;Relation&quot; /&gt;&lt;/p&gt;
 
 &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;기존의 ROS1에서는 'roscore' 라는 별도의 마스터를 두고 통신을 진행하였다. 
 이 마스터는 중개자로서 각종 노드에서 발생하는 Publisher 와 Subscriber 사이에서 일어나는 통신을 중재하였는데 이런 통신에서 XMLRPC(Xml Remote Procedure Call)을 사용하여 상호작용 하였다.
@@ -70,7 +70,7 @@
 도데체 DDS가 뭔데 ROS2에서 이를 도입하였을까? 이 DDS 통신에 대해서만 제대로 이해 해도 일단 ROS1 과 ROS2의 차이는 절반을 이해했다고 해도 된다. 
 우선 이 통신 표준을 설립한 OMG(Object Management Group)에 대해서 알아보자&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;./picture/7.png&quot; alt=&quot;Relation&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;../_posts/picture/7.png&quot; alt=&quot;Relation&quot; /&gt;&lt;/p&gt;
 
 &lt;h4 id=&quot;omg-object-management-group&quot;&gt;OMG (Object Management Group)&lt;/h4&gt;
 &lt;p&gt;OMG는 1989년 4월 HP, SUN 등 11개 업체에 의해 발족된 OMG는 이러한 표준화를 선두에서 이끌고 있는 조직으로 현재 전 세계 800여 개 이상의 회사가 소속된 컨소시엄 형태의 비영리단체이다.&lt;/p&gt;
@@ -83,7 +83,7 @@
 &lt;p&gt;DDS는 기존 클라이언트 - 서버 기반의 노드간 상호 동작을 중심이 아니라 노드 상호간 공유/교환 되어야 할 데이터 자체에 중심을 둔 데이터 배포 메커니즘이라고 &lt;strong&gt;ETRI&lt;/strong&gt; 에 기술되어 있다. 간단히 말하자면 원래 통신을 할 때는 서버랑 클라이언트 끼리 해야 되는게 맞지만, 워낙 시대가 좋아져서 기기들마다 통신이 되다보니 모두 연결하기엔 HW가 후달린다. 또, 즉각 대응이라는(실시간) 부담 역시 안고가야하는 통신이 요구되면서, 이런 통신 풀을 가운데(미들웨어)에서 관리하고(스케쥴링) 신뢰도를 높여(Qos) 통신 할 순 없을 까 하고 나온게 DDS란 말씀. 이로 인해 Domain ID만 가지고 통신이 되기에 Socket 이 필요없이 통신을 할 수 있게 되었다.&lt;/p&gt;
 
 &lt;p&gt;그러다 보니 자연스럽게 DDS 통신이 놓이는 포지션은 하기와 같이 쓰이게 된다.
-&lt;img src=&quot;./picture/8.png&quot; alt=&quot;Relation&quot; /&gt;&lt;/p&gt;
+&lt;img src=&quot;../_posts/picture/8.png&quot; alt=&quot;Relation&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;즉, DDS는 다양한 통신 객체들의 대량 데이터를 관리하는 통신 미들웨어&lt;/strong&gt; 라고 볼 수 있다.
 DDS 개념은 네트워크프로그래밍 영역이라 ROS 자체에서 뭔가 깊게 설명하기 그렇다. 사실 ROS는 종합 예술적 오픈소스 프로젝트로 어느 한분야를 깊게 들어가면 끝도 없다. 수많은 전문가들이 만든 이 아름다운 도구를 우리는 이렇게 손쉽게 사용하고 있는것이다.&lt;/p&gt;
@@ -109,7 +109,7 @@ DDS 개념은 네트워크프로그래밍 영역이라 ROS 자체에서 뭔가 �
 
 &lt;p&gt;PS : 참고로 ROS2 의 최고 돈줄이 미국국방성(DoD),NSA 다.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;./picture/9.png&quot; alt=&quot;Relation&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;../_posts/picture/9.png&quot; alt=&quot;Relation&quot; /&gt;&lt;/p&gt;
 
 &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;상기 그림은 ROS2에서의 DDS 통신의 아키텍쳐 이다. 
 여기서 쓰이는 RTPS,RTI,rmw,rcl 등 용어에 대해 설명하고 이해하고자 한다.
@@ -192,14 +192,14 @@ RTPS(Real Time Publish Subscribe) 라는 녀석은 OMG에서 만든 녀석이다
 
 &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Gazebo&lt;/code&gt;에 두대 이상의 시뮬레이션을 넣고싶어 ROS 1 으로 환경을 구축할 때, 이용 해야했던 xml,yaml,launch 구조는 일반적인 방법으로  ROS Developer 들이 하기에는 매우 적합하지 못했다. &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;group&amp;gt;&lt;/code&gt; 태그 안에서 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;tf_prefix&lt;/code&gt; 를 생성해 별도의 link,joint 그룹을 생성하고 동작에 대한 별도의 node 를 형성 해 실행하는데 있어 그리고 두개 이상의 rviz를 moveit 으로 병행해 Python으로 동작시키는것은 상당히 번거롭다.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;./picture/1.png&quot; alt=&quot;Relation&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;../_posts/picture/1.png&quot; alt=&quot;Relation&quot; /&gt;&lt;/p&gt;
 
 &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;두대의 6축 로봇을 `Gazebo` 안에서 두개의 Rviz로 제어하는 모습
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;&lt;img src=&quot;./picture/2.png&quot; alt=&quot;Relation&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;../_posts/picture/2.png&quot; alt=&quot;Relation&quot; /&gt;&lt;/p&gt;
 
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;두대 이상의 로봇은 보다 복잡한 tf map을 그린다. ![Relation](./picture/3.png)
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;두대 이상의 로봇은 보다 복잡한 tf map을 그린다. ![Relation](../_posts/picture/3.png)
 
 두대 이상의 로봇의 node는 group 내에서 더 복잡하게 얽혀있다.
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
@@ -227,11 +227,11 @@ RTPS(Real Time Publish Subscribe) 라는 녀석은 OMG에서 만든 녀석이다
 &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;대표적인 pkg 중 하나인 'MoveIt! Setup Assistant'
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;&lt;img src=&quot;./picture/4.png&quot; alt=&quot;Relation&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;../_posts/picture/4.png&quot; alt=&quot;Relation&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;ROS에서 패키지를 생성한 경우 다음과 같은 디렉터리 구조를 만들 수 있다.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;./picture/5.png&quot; alt=&quot;Relation&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;../_posts/picture/5.png&quot; alt=&quot;Relation&quot; /&gt;&lt;/p&gt;
 
 &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;config 폴더 : ROS 패키지에서 사용하는 모든 환경 설정 파일들을 보관
 scripts 폴더 :실행 가능한 python script를 보관
