@@ -1,4 +1,4 @@
-I"�_<h1 id="ros1-과-ros2의-차이-그리고-개념정리">ROS1 과 ROS2의 차이 그리고 개념정리</h1>
+I"�e<h1 id="ros1-과-ros2의-차이-그리고-개념정리">ROS1 과 ROS2의 차이 그리고 개념정리</h1>
 <hr />
 <h2 id="목-차">목 차</h2>
 
@@ -10,7 +10,7 @@
 <h2 id="1-ros-1-과-ros-2-의-차이점-비교">1. ROS 1 과 ROS 2 의 차이점 비교</h2>
 
 <h3 id="아키텍쳐-비교">아키텍쳐 비교</h3>
-<p><img src="//gwkim9444.github.io/_posts/picture/ros_diffrence.png" alt="Relation" /></p>
+<p><img src="https://github.com/gwkim9444/gwkim9444.github.io/blob/master/_posts/picture/ros_diffrence.png?raw=true" alt="Relation" /></p>
 
 <table>
   <thead>
@@ -62,15 +62,50 @@
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>기존의 ROS1에서는 'roscore' 라는 별도의 마스터를 두고 통신을 진행하였다. 
 이 마스터는 중개자로서 각종 노드에서 발생하는 Publisher 와 Subscriber 사이에서 일어나는 통신을 중재하였는데 이런 통신에서 XMLRPC(Xml Remote Procedure Call)을 사용하여 상호작용 하였다.
 'roscore' 명령어를 실행 할 경우 roscore.xml 을 포함하는 launch file을 실행하는데, 해당 xml 안에 내 ROS_MASTER_URI 주소를 사용해 rosmaster가 받아 들일 IP주소 및 PORT를 사용해 마스터를 관리 및 사용한다.
-여기서 마스터와 슬레이브는 토픽,서비스,액션립의 방식을 활용해 서로 통신을 진행하였었다. | 통신 이름 | 동기/비동기 | 방향 | 특징 | 부연 | | :--------: | :--------: | :--------: | :--------: | :--------: | |`Topic` | 비동기 | 단방향 | 연속 데이터 수신 용 | 1:1 , 1:N , N:N|  |`Service`| 동기 | 양방향 | 요청 처리가 일시적인 현재 상태에 대한 요청 및 응답 | Request / Response |  |`Action`| 비동기 | 양방향 |요청 처리 후 피드백이 오래 걸리거나 중간 피드백이 필요한 경우 | Goal / FeedBack / Result |
+여기서 마스터와 슬레이브는 토픽,서비스,액션립의 방식을 활용해 서로 통신을 진행하였었다.
 </code></pre></div></div>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">통신 이름</th>
+      <th style="text-align: center">동기/비동기</th>
+      <th style="text-align: center">방향</th>
+      <th style="text-align: center">특징</th>
+      <th style="text-align: center">부연</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center"><code class="language-plaintext highlighter-rouge">Topic</code></td>
+      <td style="text-align: center">비동기</td>
+      <td style="text-align: center">단방향</td>
+      <td style="text-align: center">연속 데이터 수신 용</td>
+      <td style="text-align: center">1:1 , 1:N , N:N</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><code class="language-plaintext highlighter-rouge">Service</code></td>
+      <td style="text-align: center">동기</td>
+      <td style="text-align: center">양방향</td>
+      <td style="text-align: center">요청 처리가 일시적인 현재 상태에 대한 요청 및 응답</td>
+      <td style="text-align: center">Request / Response</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><code class="language-plaintext highlighter-rouge">Action</code></td>
+      <td style="text-align: center">비동기</td>
+      <td style="text-align: center">양방향</td>
+      <td style="text-align: center">요청 처리 후 피드백이 오래 걸리거나 중간 피드백이 필요한 경우</td>
+      <td style="text-align: center">Goal / FeedBack / Result</td>
+    </tr>
+  </tbody>
+</table>
 
 <h5 id="--ros-2의-통신방식">- ROS 2의 통신방식</h5>
 <p>ROS2의 경우 DDS(Data Distribution Service)라는 통신방식을 활용하여 기존의 통신방식을 개선하였다.<br />
 도데체 DDS가 뭔데 ROS2에서 이를 도입하였을까? 이 DDS 통신에 대해서만 제대로 이해 해도 일단 ROS1 과 ROS2의 차이는 절반을 이해했다고 해도 된다. 
 우선 이 통신 표준을 설립한 OMG(Object Management Group)에 대해서 알아보자</p>
 
-<p><img src="./picture/7.png" alt="Relation" /></p>
+<p><img src="../_posts/picture/7.png" alt="Relation" /></p>
 
 <h4 id="omg-object-management-group">OMG (Object Management Group)</h4>
 <p>OMG는 1989년 4월 HP, SUN 등 11개 업체에 의해 발족된 OMG는 이러한 표준화를 선두에서 이끌고 있는 조직으로 현재 전 세계 800여 개 이상의 회사가 소속된 컨소시엄 형태의 비영리단체이다.</p>
@@ -83,7 +118,7 @@
 <p>DDS는 기존 클라이언트 - 서버 기반의 노드간 상호 동작을 중심이 아니라 노드 상호간 공유/교환 되어야 할 데이터 자체에 중심을 둔 데이터 배포 메커니즘이라고 <strong>ETRI</strong> 에 기술되어 있다. 간단히 말하자면 원래 통신을 할 때는 서버랑 클라이언트 끼리 해야 되는게 맞지만, 워낙 시대가 좋아져서 기기들마다 통신이 되다보니 모두 연결하기엔 HW가 후달린다. 또, 즉각 대응이라는(실시간) 부담 역시 안고가야하는 통신이 요구되면서, 이런 통신 풀을 가운데(미들웨어)에서 관리하고(스케쥴링) 신뢰도를 높여(Qos) 통신 할 순 없을 까 하고 나온게 DDS란 말씀. 이로 인해 Domain ID만 가지고 통신이 되기에 Socket 이 필요없이 통신을 할 수 있게 되었다.</p>
 
 <p>그러다 보니 자연스럽게 DDS 통신이 놓이는 포지션은 하기와 같이 쓰이게 된다.
-<img src="./picture/8.png" alt="Relation" /></p>
+<img src="../_posts/picture/8.png" alt="Relation" /></p>
 
 <p><strong>즉, DDS는 다양한 통신 객체들의 대량 데이터를 관리하는 통신 미들웨어</strong> 라고 볼 수 있다.
 DDS 개념은 네트워크프로그래밍 영역이라 ROS 자체에서 뭔가 깊게 설명하기 그렇다. 사실 ROS는 종합 예술적 오픈소스 프로젝트로 어느 한분야를 깊게 들어가면 끝도 없다. 수많은 전문가들이 만든 이 아름다운 도구를 우리는 이렇게 손쉽게 사용하고 있는것이다.</p>
@@ -109,7 +144,7 @@ DDS 개념은 네트워크프로그래밍 영역이라 ROS 자체에서 뭔가 �
 
 <p>PS : 참고로 ROS2 의 최고 돈줄이 미국국방성(DoD),NSA 다.</p>
 
-<p><img src="./picture/9.png" alt="Relation" /></p>
+<p><img src="../_posts/picture/9.png" alt="Relation" /></p>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>상기 그림은 ROS2에서의 DDS 통신의 아키텍쳐 이다. 
 여기서 쓰이는 RTPS,RTI,rmw,rcl 등 용어에 대해 설명하고 이해하고자 한다.
@@ -192,14 +227,14 @@ RTPS(Real Time Publish Subscribe) 라는 녀석은 OMG에서 만든 녀석이다
 
 <p><code class="language-plaintext highlighter-rouge">Gazebo</code>에 두대 이상의 시뮬레이션을 넣고싶어 ROS 1 으로 환경을 구축할 때, 이용 해야했던 xml,yaml,launch 구조는 일반적인 방법으로  ROS Developer 들이 하기에는 매우 적합하지 못했다. <code class="language-plaintext highlighter-rouge">&lt;group&gt;</code> 태그 안에서 <code class="language-plaintext highlighter-rouge">tf_prefix</code> 를 생성해 별도의 link,joint 그룹을 생성하고 동작에 대한 별도의 node 를 형성 해 실행하는데 있어 그리고 두개 이상의 rviz를 moveit 으로 병행해 Python으로 동작시키는것은 상당히 번거롭다.</p>
 
-<p><img src="./picture/1.png" alt="Relation" /></p>
+<p><img src="https://github.com/gwkim9444/gwkim9444.github.io/blob/master/_posts/picture/1.png?raw=true" alt="Relation" /></p>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>두대의 6축 로봇을 `Gazebo` 안에서 두개의 Rviz로 제어하는 모습
 </code></pre></div></div>
 
-<p><img src="./picture/2.png" alt="Relation" /></p>
+<p><img src="https://github.com/gwkim9444/gwkim9444.github.io/blob/master/_posts/picture/2.png?raw=true" alt="Relation" /></p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>두대 이상의 로봇은 보다 복잡한 tf map을 그린다. ![Relation](./picture/3.png)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>두대 이상의 로봇은 보다 복잡한 tf map을 그린다. ![Relation](https://github.com/gwkim9444/gwkim9444.github.io/blob/master/_posts/picture/3.png?raw=true)
 
 두대 이상의 로봇의 node는 group 내에서 더 복잡하게 얽혀있다.
 </code></pre></div></div>
@@ -227,11 +262,11 @@ RTPS(Real Time Publish Subscribe) 라는 녀석은 OMG에서 만든 녀석이다
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>대표적인 pkg 중 하나인 'MoveIt! Setup Assistant'
 </code></pre></div></div>
 
-<p><img src="./picture/4.png" alt="Relation" /></p>
+<p><img src="https://github.com/gwkim9444/gwkim9444.github.io/blob/master/_posts/picture/4.png?raw=true" alt="Relation" /></p>
 
 <p>ROS에서 패키지를 생성한 경우 다음과 같은 디렉터리 구조를 만들 수 있다.</p>
 
-<p><img src="./picture/5.png" alt="Relation" /></p>
+<p><img src="https://github.com/gwkim9444/gwkim9444.github.io/blob/master/_posts/picture/5.png?raw=true" alt="Relation" /></p>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>config 폴더 : ROS 패키지에서 사용하는 모든 환경 설정 파일들을 보관
 scripts 폴더 :실행 가능한 python script를 보관
