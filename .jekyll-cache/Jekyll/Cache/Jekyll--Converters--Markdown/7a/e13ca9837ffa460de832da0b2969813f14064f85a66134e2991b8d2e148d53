@@ -1,0 +1,46 @@
+I"(<h3 id="ros1-bridge">ROS1 Bridge</h3>
+<hr />
+<p>오늘은 ROS1 과 ROS2의 브릿지를 어떻게 연결하는지에대 해 알아보겠다.<br />
+ROS2는 아직 -ing(현재진행) 형이다. 아직까지 버그는 많고 보완해야될 부분 이 많다. 그리고 그동안 만들어 뒀던 수많은 ROS1에서 만들어진 pkg는 메타운영체제의 플랫폼이 바뀌었다 하여도, 많은 부분에 있어서 다시 제작해서 사용하는것은 있을수 없는 일이다. 애시당초 ROS의 추구 방향은 <code class="language-plaintext highlighter-rouge">재사용성 극대화</code> 아니던가?<br />
+그래서 ROS1에서 사용되는 많은 Node Pkg는 우리가 기존에 사용하던데로 사용 할 수있도록 ROS1과 ROS2 간에 통신에 ROS1-Bridge가 나오게 된 배경이다.</p>
+
+<p>이 ROS1 Bridge는 ROS1 과 ROS2 의 노드를 둘다 담당하는 이중 간첩? 같은 역할을 한다.</p>
+
+<h3 id="ros1-bridge는-어떻게-사용하나">ROS1 Bridge는 어떻게 사용하나?</h3>
+<hr />
+<p>ROS1과 ROS2간의 메세지 정의는 package.xml안에 정의된 yaml 파일을 통해 이루어진다.</p>
+
+<p>이 말이 무엇이냐 하면 yaml 파일을 만들어서 그 안에 <code class="language-plaintext highlighter-rouge">ROS1 관절(Joint1) 메세지 : ROS1 관절(Joint1) 메세지</code> 라고 적어 두는것이다. <strong>얘 는 얘 에요!</strong> 라고!</p>
+
+<p>그래서 ROS2에서 ROS1에서 사용되는 메세지를 받고 싶을 때 yaml 파일 안에 3가지 방식으로 설정해 ROS1에서 오는 메세지 들을 받을 수있도록 돕고 있다.</p>
+
+<p>더 자세한 원리는 아래 링크를 통해 이해 하는것을 추천 드린다.<br />
+필자도 해당 링크를 통한 내용을 기반으로 설명 드리는 것임을 미리 말씀 드린다.</p>
+
+<p><a href="https://github.com/ros2/ros1_bridge/blob/master/doc/index.rst">링크</a></p>
+
+<p>ROS1 Bridge를 사용하기 이전에 이 구성 환경을 어떻게 맞춰 주어야 하는지 이해 할 필요가 있다.</p>
+
+<p>가장 먼저 해야 할 일은 bashrc에서 브릿지에 대한 기본 설정을 해주어 ROS1과 ROS2 시스템의 명령어가 둘다 통용되는 환경을 Ubuntu 내에 구성 해 줄 필요가 있다. 
+어짜피 기본적으로 ROS 나 ROS2를 깔아 보신분들의 경우 알겠지만, 일단 해당 명령어 들은 그냥 보통 <strong>~/.bashrc</strong> 에 추가해 두었을 것이다. 미리 source로</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># ROS Melodic의 setup.bash 설정
+source /opt/ros/melodic/setup.bash  
+source /opt/ros/dashing/local_setup.bash  
+source /home/user/catkin_ws/devel/setup.bash  
+
+# ROS2 Foxy의 setup.bash 설정
+source /home/user/ros2_ws/install/local_setup.bash  
+
+
+# ROS1
+export ROS_DISTRO=melodic   
+source /opt/ros/$ROS_DISTRO/setup.bash  
+source /home/user/catkin_ws/devel/setup.bash  
+
+# ROS2
+export ROS_DISTRO=dashing
+source /opt/ros/$ROS_DISTRO/setup.bash
+source /home/user/ros2_ws/install/local_setup.bash
+</code></pre></div></div>
+:ET

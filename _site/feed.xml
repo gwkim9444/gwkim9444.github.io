@@ -5,9 +5,97 @@
     <description>Node 개발과 ROS/ROS2를 프로젝트에 적용중인 Developer</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 30 Jul 2020 19:58:02 +0900</pubDate>
-    <lastBuildDate>Thu, 30 Jul 2020 19:58:02 +0900</lastBuildDate>
+    <pubDate>Sun, 23 Aug 2020 23:25:26 +0900</pubDate>
+    <lastBuildDate>Sun, 23 Aug 2020 23:25:26 +0900</lastBuildDate>
     <generator>Jekyll v4.1.1</generator>
+    
+      <item>
+        <title></title>
+        <description>&lt;h3 id=&quot;chapter-03--프로세스와-스레드&quot;&gt;Chapter 03 : 프로세스와 스레드&lt;/h3&gt;
+&lt;hr /&gt;
+
+&lt;h4 id=&quot;01-프로세스의-개념&quot;&gt;01. 프로세스의 개념&lt;/h4&gt;
+
+&lt;p&gt;초기 컴퓨터는 1개의 컴퓨터에 하나의 프로그램이 동작하는 형태의 구조를 가지고있었다. 실행중인 프로그램이 컴퓨터의 모든 자원을 독점하는 이 구조는 불합리하였고, 이를 개선한 다중 프로그래밍 환경에 운영이 가능한 폰 노이만의 &lt;strong&gt;하버드 아키텍처(Harvard architecture)&lt;/strong&gt; 를 채용함으로서 메모리에 여러 프로그램을 적재하는 방식의 컴퓨터 운영방식이 도래하였다.&lt;/p&gt;
+
+&lt;p&gt;이에 따라 병행 되는 프로그램들은 컴퓨터의 CPU의 사용권한을 점유하는데 있어 상호 약속이 필요하게 되었다. 컴퓨터가 메모리에서 ALU / CU 와 같은 심층부에 접근 할때, 메모리 자원의 &lt;strong&gt;동시 점유&lt;/strong&gt; 는 컴퓨터의 크리티컬한 동작을 유발시 킬 수 있기 때문에 이를 시기적절한 타이밍과 메모리 적재 여부를 조절하기 위해 &lt;strong&gt;‘프로세스(Process)’&lt;/strong&gt; 라는 개념이 도입되었다.&lt;/p&gt;
+
+&lt;p&gt;프로세스는 하기와 같이 정의 된다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;실행중인 프로그램&lt;/li&gt;
+  &lt;li&gt;비동기적 행위&lt;/li&gt;
+  &lt;li&gt;실행 중인 프로시저&lt;/li&gt;
+  &lt;li&gt;실행 중인 프로시저의 추적&lt;/li&gt;
+  &lt;li&gt;운영체제에 들어있는 프로세스 제어 블록&lt;/li&gt;
+  &lt;li&gt;프로세서에 할당하여 실행 할 수 있는 개체가 가능한 대상&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;그중에서 가장 이해하기 쉬운 용어는 &lt;strong&gt;‘실행중인 프로그램’&lt;/strong&gt; 이다.&lt;/p&gt;
+
+&lt;p&gt;흔히 프로그램이라 함은 ‘정적’인 상태를 의미한다. 컴파일한 코드와 초기화 전역변수, 문자열과 문자열 상수 등 정적 데이터를 포함한 포괄적인 용어로 실제 운영되는 프로그램은 우리가 &lt;strong&gt;‘프로세스’&lt;/strong&gt; 라고 부르는 것이 옳다.&lt;/p&gt;
+</description>
+        <pubDate>Sun, 23 Aug 2020 23:25:26 +0900</pubDate>
+        <link>http://localhost:4000/2020-08-17-linux-vr-oculus-rift-dk2/</link>
+        <guid isPermaLink="true">http://localhost:4000/2020-08-17-linux-vr-oculus-rift-dk2/</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>ROS2로 ROS1과 통신하는 방법(브릿지)</title>
+        <description>&lt;h3 id=&quot;ros1-bridge&quot;&gt;ROS1 Bridge&lt;/h3&gt;
+&lt;hr /&gt;
+&lt;p&gt;오늘은 ROS1 과 ROS2의 브릿지를 어떻게 연결하는지에대 해 알아보겠다.&lt;br /&gt;
+ROS2는 아직 -ing(현재진행) 형이다. 아직까지 버그는 많고 보완해야될 부분 이 많다. 그리고 그동안 만들어 뒀던 수많은 ROS1에서 만들어진 pkg는 메타운영체제의 플랫폼이 바뀌었다 하여도, 많은 부분에 있어서 다시 제작해서 사용하는것은 있을수 없는 일이다. 애시당초 ROS의 추구 방향은 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;재사용성 극대화&lt;/code&gt; 아니던가?&lt;br /&gt;
+그래서 ROS1에서 사용되는 많은 Node Pkg는 우리가 기존에 사용하던데로 사용 할 수있도록 ROS1과 ROS2 간에 통신에 ROS1-Bridge가 나오게 된 배경이다.&lt;/p&gt;
+
+&lt;p&gt;이 ROS1 Bridge는 ROS1 과 ROS2 의 노드를 둘다 담당하는 이중 간첩? 같은 역할을 한다.&lt;/p&gt;
+
+&lt;h3 id=&quot;ros1-bridge는-어떻게-사용하나&quot;&gt;ROS1 Bridge는 어떻게 사용하나?&lt;/h3&gt;
+&lt;hr /&gt;
+&lt;p&gt;ROS1과 ROS2간의 메세지 정의는 package.xml안에 정의된 yaml 파일을 통해 이루어진다.&lt;/p&gt;
+
+&lt;p&gt;이 말이 무엇이냐 하면 yaml 파일을 만들어서 그 안에 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ROS1 관절(Joint1) 메세지 : ROS1 관절(Joint1) 메세지&lt;/code&gt; 라고 적어 두는것이다. &lt;strong&gt;얘 는 얘 에요!&lt;/strong&gt; 라고!&lt;/p&gt;
+
+&lt;p&gt;그래서 ROS2에서 ROS1에서 사용되는 메세지를 받고 싶을 때 yaml 파일 안에 3가지 방식으로 설정해 ROS1에서 오는 메세지 들을 받을 수있도록 돕고 있다.&lt;/p&gt;
+
+&lt;p&gt;더 자세한 원리는 아래 링크를 통해 이해 하는것을 추천 드린다.&lt;br /&gt;
+필자도 해당 링크를 통한 내용을 기반으로 설명 드리는 것임을 미리 말씀 드린다.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/ros2/ros1_bridge/blob/master/doc/index.rst&quot;&gt;링크&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;ROS1 Bridge를 사용하기 이전에 이 구성 환경을 어떻게 맞춰 주어야 하는지 이해 할 필요가 있다.&lt;/p&gt;
+
+&lt;p&gt;가장 먼저 해야 할 일은 bashrc에서 브릿지에 대한 기본 설정을 해주어 ROS1과 ROS2 시스템의 명령어가 둘다 통용되는 환경을 Ubuntu 내에 구성 해 줄 필요가 있다. 
+어짜피 기본적으로 ROS 나 ROS2를 깔아 보신분들의 경우 알겠지만, 일단 해당 명령어 들은 그냥 보통 &lt;strong&gt;~/.bashrc&lt;/strong&gt; 에 추가해 두었을 것이다. 미리 source로&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# ROS Melodic의 setup.bash 설정
+source /opt/ros/melodic/setup.bash  
+source /opt/ros/dashing/local_setup.bash  
+source /home/user/catkin_ws/devel/setup.bash  
+
+# ROS2 Foxy의 setup.bash 설정
+source /home/user/ros2_ws/install/local_setup.bash  
+
+
+# ROS1
+export ROS_DISTRO=melodic   
+source /opt/ros/$ROS_DISTRO/setup.bash  
+source /home/user/catkin_ws/devel/setup.bash  
+
+# ROS2
+export ROS_DISTRO=dashing
+source /opt/ros/$ROS_DISTRO/setup.bash
+source /home/user/ros2_ws/install/local_setup.bash
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+</description>
+        <pubDate>Thu, 30 Jul 2020 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/ros2-ros1/</link>
+        <guid isPermaLink="true">http://localhost:4000/ros2-ros1/</guid>
+        
+        
+      </item>
     
       <item>
         <title>ROS1과 ROS2의 차이</title>

@@ -9,18 +9,18 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>목차 - Groot Robot Blog</title>
+<!-- begin _includes/seo.html --><title>Groot Robot Blog</title>
 <meta name="description" content="Node 개발과 ROS/ROS2를 프로젝트에 적용중인 Developer">
 
 
   <meta name="author" content="Dale Kim">
 
 
-<meta property="og:type" content="website">
+<meta property="og:type" content="article">
 <meta property="og:locale" content="ko_KR">
 <meta property="og:site_name" content="Groot Robot Blog">
-<meta property="og:title" content="목차">
-<meta property="og:url" content="http://localhost:4000/categories/">
+<meta property="og:title" content="Groot Robot Blog">
+<meta property="og:url" content="http://localhost:4000/2020-08-17-linux-vr-oculus-rift-dk2/">
 
 
   <meta property="og:description" content="Node 개발과 ROS/ROS2를 프로젝트에 적용중인 Developer">
@@ -31,6 +31,8 @@
 
 
 
+  <meta property="article:published_time" content="2020-08-23T23:25:26+09:00">
+
 
 
 
@@ -40,7 +42,7 @@
   
 
 
-<link rel="canonical" href="http://localhost:4000/categories/">
+<link rel="canonical" href="http://localhost:4000/2020-08-17-linux-vr-oculus-rift-dk2/">
 
 
 
@@ -102,7 +104,7 @@
 
   </head>
 
-  <body class="layout--categories">
+  <body class="layout--single">
     <nav class="skip-links">
   <h2 class="screen-reader-text">Skip links</h2>
   <ul>
@@ -168,7 +170,7 @@
         <span class="sep">/</span>
       
       
-        <li class="current">목차</li>
+        <li class="current"></li>
       
     
   </ol>
@@ -300,24 +302,180 @@
 
 
 
-  <div class="archive">
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
     
-      <h1 id="page-title" class="page__title">목차</h1>
+    <meta itemprop="description" content="">
+    <meta itemprop="datePublished" content="2020-08-23T23:25:26+09:00">
     
-    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          
+          
+            <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
 
 
 
 
+  최대 1 분 소요
 
-<ul class="taxonomy__index">
-  
+</p>
+          
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+        <h3 id="chapter-03--프로세스와-스레드">Chapter 03 : 프로세스와 스레드</h3>
+<hr />
+
+<h4 id="01-프로세스의-개념">01. 프로세스의 개념</h4>
+
+<p>초기 컴퓨터는 1개의 컴퓨터에 하나의 프로그램이 동작하는 형태의 구조를 가지고있었다. 실행중인 프로그램이 컴퓨터의 모든 자원을 독점하는 이 구조는 불합리하였고, 이를 개선한 다중 프로그래밍 환경에 운영이 가능한 폰 노이만의 <strong>하버드 아키텍처(Harvard architecture)</strong> 를 채용함으로서 메모리에 여러 프로그램을 적재하는 방식의 컴퓨터 운영방식이 도래하였다.</p>
+
+<p>이에 따라 병행 되는 프로그램들은 컴퓨터의 CPU의 사용권한을 점유하는데 있어 상호 약속이 필요하게 되었다. 컴퓨터가 메모리에서 ALU / CU 와 같은 심층부에 접근 할때, 메모리 자원의 <strong>동시 점유</strong> 는 컴퓨터의 크리티컬한 동작을 유발시 킬 수 있기 때문에 이를 시기적절한 타이밍과 메모리 적재 여부를 조절하기 위해 <strong>‘프로세스(Process)’</strong> 라는 개념이 도입되었다.</p>
+
+<p>프로세스는 하기와 같이 정의 된다.</p>
+
+<ul>
+  <li>실행중인 프로그램</li>
+  <li>비동기적 행위</li>
+  <li>실행 중인 프로시저</li>
+  <li>실행 중인 프로시저의 추적</li>
+  <li>운영체제에 들어있는 프로세스 제어 블록</li>
+  <li>프로세서에 할당하여 실행 할 수 있는 개체가 가능한 대상</li>
 </ul>
 
+<p>그중에서 가장 이해하기 쉬운 용어는 <strong>‘실행중인 프로그램’</strong> 이다.</p>
+
+<p>흔히 프로그램이라 함은 ‘정적’인 상태를 의미한다. 컴파일한 코드와 초기화 전역변수, 문자열과 문자열 상수 등 정적 데이터를 포함한 포괄적인 용어로 실제 운영되는 프로그램은 우리가 <strong>‘프로세스’</strong> 라고 부르는 것이 옳다.</p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
 
 
-  </div>
+        
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time datetime="2020-08-23T23:25:26+09:00">August 23, 2020</time></p>
+
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">공유하기</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=%20http%3A%2F%2Flocalhost%3A4000%2F2020-08-17-linux-vr-oculus-rift-dk2%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2F2020-08-17-linux-vr-oculus-rift-dk2%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2F2020-08-17-linux-vr-oculus-rift-dk2%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/ros2-ros1/" class="pagination--pager" title="ROS2로 ROS1과 통신하는 방법(브릿지)
+">이전</a>
+    
+    
+      <a href="#" class="pagination--pager disabled">다음</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h4 class="page__related-title">참고</h4>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="/assets/images/groot.jpeg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/ros2-ros1/" rel="permalink">ROS2로 ROS1과 통신하는 방법(브릿지)
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  1 분 소요
+
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">ROS1 Bridge
+
+
+오늘은 ROS1 과 ROS2의 브릿지를 어떻게 연결하는지에대 해 알아보겠다.
+ROS2는 아직 -ing(현재진행) 형이다. 아직까지 버그는 많고 보완해야될 부분 이 많다. 그리고 그동안 만들어 뒀던 수많은 ROS1에서 만들어진 pkg는 메타운영체제의 플랫폼이...</p>
+  </article>
 </div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="/assets/images/groot.jpeg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/ros1-ros2/" rel="permalink">ROS1과 ROS2의 차이
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  11 분 소요
+
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">목 차
+※ ROS1 과 ROS2 에 대한 차이를 알고 싶으신 분은 1번만 참고하시면 됩니다.
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
     </div>
 
     

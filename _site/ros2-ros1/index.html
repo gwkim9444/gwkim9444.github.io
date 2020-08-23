@@ -1,0 +1,555 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.19.3 by Michael Rose
+  Copyright 2013-2019 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="ko" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>ROS2로 ROS1과 통신하는 방법(브릿지) - Groot Robot Blog</title>
+<meta name="description" content="ROS1 Bridge   오늘은 ROS1 과 ROS2의 브릿지를 어떻게 연결하는지에대 해 알아보겠다. ROS2는 아직 -ing(현재진행) 형이다. 아직까지 버그는 많고 보완해야될 부분 이 많다. 그리고 그동안 만들어 뒀던 수많은 ROS1에서 만들어진 pkg는 메타운영체제의 플랫폼이 바뀌었다 하여도, 많은 부분에 있어서 다시 제작해서 사용하는것은 있을수 없는 일이다. 애시당초 ROS의 추구 방향은 재사용성 극대화 아니던가? 그래서 ROS1에서 사용되는 많은 Node Pkg는 우리가 기존에 사용하던데로 사용 할 수있도록 ROS1과 ROS2 간에 통신에 ROS1-Bridge가 나오게 된 배경이다.">
+
+
+  <meta name="author" content="Dale Kim">
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="Groot Robot Blog">
+<meta property="og:title" content="ROS2로 ROS1과 통신하는 방법(브릿지)">
+<meta property="og:url" content="http://localhost:4000/ros2-ros1/">
+
+
+  <meta property="og:description" content="ROS1 Bridge   오늘은 ROS1 과 ROS2의 브릿지를 어떻게 연결하는지에대 해 알아보겠다. ROS2는 아직 -ing(현재진행) 형이다. 아직까지 버그는 많고 보완해야될 부분 이 많다. 그리고 그동안 만들어 뒀던 수많은 ROS1에서 만들어진 pkg는 메타운영체제의 플랫폼이 바뀌었다 하여도, 많은 부분에 있어서 다시 제작해서 사용하는것은 있을수 없는 일이다. 애시당초 ROS의 추구 방향은 재사용성 극대화 아니던가? 그래서 ROS1에서 사용되는 많은 Node Pkg는 우리가 기존에 사용하던데로 사용 할 수있도록 ROS1과 ROS2 간에 통신에 ROS1-Bridge가 나오게 된 배경이다.">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2020-07-30T00:00:00+09:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/ros2-ros1/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Dale Kim",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Groot Robot Blog Feed">
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
+
+<!--[if IE]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          ROS Developer Blog
+          <span class="site-subtitle">로봇운영체제의 모든것을 담아</span>
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/archive/">Archive</a>
+            </li><li class="masthead__menu-item">
+              <a href="/categories/">Categories</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tags/">Tags</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">토글 메뉴</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+  
+    
+
+
+
+<nav class="breadcrumbs">
+  <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+    
+    
+    
+      
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="http://localhost:4000/" itemprop="item"><span itemprop="name">Home</span></a>
+          <meta itemprop="position" content="1" />
+        </li>
+        <span class="sep">/</span>
+      
+      
+        <li class="current">ROS2로 ROS1과 통신하는 방법(브릿지)</li>
+      
+    
+  </ol>
+</nav>
+
+  
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person">
+
+  
+    <div>
+      
+        <img src="/assets/images/groot.jpeg" alt="Dale Kim" itemprop="image">
+      
+    </div>
+  
+
+  <div class="author__content">
+    
+      <h3 class="author__name" itemprop="name">Dale Kim</h3>
+    
+    
+      <div class="author__bio" itemprop="description">
+        <p>ROS 개발과 관련된 글을 올리는 장소입니다 <br /> 각종 의견 및 피드백 환영합니다.</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">팔로우 </button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name">Republic of KOREA</span>
+        </li>
+      
+
+      
+        
+          
+            <li><a href="kking9444@gmail.com" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span></a></li>
+          
+        
+          
+            <li><a href="https://gwkim9444.github.io" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-link" aria-hidden="true"></i><span class="label">Website</span></a></li>
+          
+        
+          
+        
+          
+        
+          
+            <li><a href="https://github.com/gwkim9444" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="ROS2로 ROS1과 통신하는 방법(브릿지)">
+    <meta itemprop="description" content="ROS1 Bridge오늘은 ROS1 과 ROS2의 브릿지를 어떻게 연결하는지에대 해 알아보겠다.ROS2는 아직 -ing(현재진행) 형이다. 아직까지 버그는 많고 보완해야될 부분 이 많다. 그리고 그동안 만들어 뒀던 수많은 ROS1에서 만들어진 pkg는 메타운영체제의 플랫폼이 바뀌었다 하여도, 많은 부분에 있어서 다시 제작해서 사용하는것은 있을수 없는 일이다. 애시당초 ROS의 추구 방향은 재사용성 극대화 아니던가?그래서 ROS1에서 사용되는 많은 Node Pkg는 우리가 기존에 사용하던데로 사용 할 수있도록 ROS1과 ROS2 간에 통신에 ROS1-Bridge가 나오게 된 배경이다.">
+    <meta itemprop="datePublished" content="2020-07-30T00:00:00+09:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">ROS2로 ROS1과 통신하는 방법(브릿지)
+</h1>
+          
+            <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  1 분 소요
+
+</p>
+          
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+        <h3 id="ros1-bridge">ROS1 Bridge</h3>
+<hr />
+<p>오늘은 ROS1 과 ROS2의 브릿지를 어떻게 연결하는지에대 해 알아보겠다.<br />
+ROS2는 아직 -ing(현재진행) 형이다. 아직까지 버그는 많고 보완해야될 부분 이 많다. 그리고 그동안 만들어 뒀던 수많은 ROS1에서 만들어진 pkg는 메타운영체제의 플랫폼이 바뀌었다 하여도, 많은 부분에 있어서 다시 제작해서 사용하는것은 있을수 없는 일이다. 애시당초 ROS의 추구 방향은 <code class="language-plaintext highlighter-rouge">재사용성 극대화</code> 아니던가?<br />
+그래서 ROS1에서 사용되는 많은 Node Pkg는 우리가 기존에 사용하던데로 사용 할 수있도록 ROS1과 ROS2 간에 통신에 ROS1-Bridge가 나오게 된 배경이다.</p>
+
+<p>이 ROS1 Bridge는 ROS1 과 ROS2 의 노드를 둘다 담당하는 이중 간첩? 같은 역할을 한다.</p>
+
+<h3 id="ros1-bridge는-어떻게-사용하나">ROS1 Bridge는 어떻게 사용하나?</h3>
+<hr />
+<p>ROS1과 ROS2간의 메세지 정의는 package.xml안에 정의된 yaml 파일을 통해 이루어진다.</p>
+
+<p>이 말이 무엇이냐 하면 yaml 파일을 만들어서 그 안에 <code class="language-plaintext highlighter-rouge">ROS1 관절(Joint1) 메세지 : ROS1 관절(Joint1) 메세지</code> 라고 적어 두는것이다. <strong>얘 는 얘 에요!</strong> 라고!</p>
+
+<p>그래서 ROS2에서 ROS1에서 사용되는 메세지를 받고 싶을 때 yaml 파일 안에 3가지 방식으로 설정해 ROS1에서 오는 메세지 들을 받을 수있도록 돕고 있다.</p>
+
+<p>더 자세한 원리는 아래 링크를 통해 이해 하는것을 추천 드린다.<br />
+필자도 해당 링크를 통한 내용을 기반으로 설명 드리는 것임을 미리 말씀 드린다.</p>
+
+<p><a href="https://github.com/ros2/ros1_bridge/blob/master/doc/index.rst">링크</a></p>
+
+<p>ROS1 Bridge를 사용하기 이전에 이 구성 환경을 어떻게 맞춰 주어야 하는지 이해 할 필요가 있다.</p>
+
+<p>가장 먼저 해야 할 일은 bashrc에서 브릿지에 대한 기본 설정을 해주어 ROS1과 ROS2 시스템의 명령어가 둘다 통용되는 환경을 Ubuntu 내에 구성 해 줄 필요가 있다. 
+어짜피 기본적으로 ROS 나 ROS2를 깔아 보신분들의 경우 알겠지만, 일단 해당 명령어 들은 그냥 보통 <strong>~/.bashrc</strong> 에 추가해 두었을 것이다. 미리 source로</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># ROS Melodic의 setup.bash 설정
+source /opt/ros/melodic/setup.bash  
+source /opt/ros/dashing/local_setup.bash  
+source /home/user/catkin_ws/devel/setup.bash  
+
+# ROS2 Foxy의 setup.bash 설정
+source /home/user/ros2_ws/install/local_setup.bash  
+
+
+# ROS1
+export ROS_DISTRO=melodic   
+source /opt/ros/$ROS_DISTRO/setup.bash  
+source /home/user/catkin_ws/devel/setup.bash  
+
+# ROS2
+export ROS_DISTRO=dashing
+source /opt/ros/$ROS_DISTRO/setup.bash
+source /home/user/ros2_ws/install/local_setup.bash
+</code></pre></div></div>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+        
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time datetime="2020-07-30T00:00:00+09:00">July 30, 2020</time></p>
+
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">공유하기</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=ROS2%EB%A1%9C+ROS1%EA%B3%BC+%ED%86%B5%EC%8B%A0%ED%95%98%EB%8A%94+%EB%B0%A9%EB%B2%95%28%EB%B8%8C%EB%A6%BF%EC%A7%80%29%20http%3A%2F%2Flocalhost%3A4000%2Fros2-ros1%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fros2-ros1%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fros2-ros1%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/ros1-ros2/" class="pagination--pager" title="ROS1과 ROS2의 차이
+">이전</a>
+    
+    
+      <a href="/2020-08-17-linux-vr-oculus-rift-dk2/" class="pagination--pager" title="
+">다음</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h4 class="page__related-title">참고</h4>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="/assets/images/groot.jpeg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/2020-08-17-linux-vr-oculus-rift-dk2/" rel="permalink">
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  최대 1 분 소요
+
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="/assets/images/groot.jpeg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/ros1-ros2/" rel="permalink">ROS1과 ROS2의 차이
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  11 분 소요
+
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">목 차
+※ ROS1 과 ROS2 에 대한 차이를 알고 싶으신 분은 1번만 참고하시면 됩니다.
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>팔로우 :</strong></li>
+    
+
+    
+      
+        
+      
+        
+      
+        
+          <li><a href="https://github.com/gwkim9444" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> 피드</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2020 Groot Robot Blog. Powered by <a href="https://github.com/gwkim9444" rel="nofollow">Dale Kim</a></div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+  </body>
+</html>
