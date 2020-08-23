@@ -5,8 +5,8 @@
     <description>Node 개발과 ROS/ROS2를 프로젝트에 적용중인 Developer</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 23 Aug 2020 23:25:26 +0900</pubDate>
-    <lastBuildDate>Sun, 23 Aug 2020 23:25:26 +0900</lastBuildDate>
+    <pubDate>Mon, 24 Aug 2020 00:21:40 +0900</pubDate>
+    <lastBuildDate>Mon, 24 Aug 2020 00:21:40 +0900</lastBuildDate>
     <generator>Jekyll v4.1.1</generator>
     
       <item>
@@ -34,8 +34,42 @@
 &lt;p&gt;그중에서 가장 이해하기 쉬운 용어는 &lt;strong&gt;‘실행중인 프로그램’&lt;/strong&gt; 이다.&lt;/p&gt;
 
 &lt;p&gt;흔히 프로그램이라 함은 ‘정적’인 상태를 의미한다. 컴파일한 코드와 초기화 전역변수, 문자열과 문자열 상수 등 정적 데이터를 포함한 포괄적인 용어로 실제 운영되는 프로그램은 우리가 &lt;strong&gt;‘프로세스’&lt;/strong&gt; 라고 부르는 것이 옳다.&lt;/p&gt;
+
+&lt;p&gt;아무쪼록 이 프로세스라는 개념을 도입한 것은 바로, &lt;strong&gt;메모리&lt;/strong&gt; 라는 녀석 때문이다. 자료구조라는 학문에서는 얼마나 빠른 시간에 메모리에 적재된 데이터를 CRUD 하는 가에 초점이 맞춰져있다고 한다면, 운영체제 학문에서는 &lt;strong&gt;메모리를 기준으로 프로세스가 어떻게 적절하게 치고 빠지는 가?&lt;/strong&gt; 하는 방법에 대해서 서술 하고있다. 이를 위해서는 일단 메모리가 어떤 구조로 이뤄 져있고 어떻게 활용되고 있는지를 확인 할 필요가 있다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://github.com/gwkim9444/gwkim9444.github.io/blob/master/_posts/picture/memory.png?raw=true&quot; alt=&quot;Relation&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;메모리는 크게 스택(Stack),힙(Heap),데이터(Data),코드(Code)로 구성되어있다.&lt;br /&gt;
+각 개념은 아래 와 같다.&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;영역&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;설명&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Stack&lt;/code&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;데이터를 일시적으로 저장하는 영역, 힙과 인접한 방향으로 데이터를 올려감&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Heap&lt;/code&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;동적으로 메모리를 할당하고 해제할 수있음, 할당된 메모리영역은 위쪽으로 커져감&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Data&lt;/code&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;프로그램의 가상 주소공간, 주로 전역변수나 정적변수를 저장하거나 할당하고 실행하기전에 초기화 함&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Code&lt;/code&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;실행 영역을 포함하는 메모리이거나 목적파일에 있는 프로그램 영역&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
 </description>
-        <pubDate>Sun, 23 Aug 2020 23:25:26 +0900</pubDate>
+        <pubDate>Mon, 24 Aug 2020 00:21:40 +0900</pubDate>
         <link>http://localhost:4000/2020-08-17-linux-vr-oculus-rift-dk2/</link>
         <guid isPermaLink="true">http://localhost:4000/2020-08-17-linux-vr-oculus-rift-dk2/</guid>
         
