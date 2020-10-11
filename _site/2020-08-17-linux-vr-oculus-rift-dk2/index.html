@@ -31,7 +31,7 @@
 
 
 
-  <meta property="article:published_time" content="2020-09-06T18:03:07+09:00">
+  <meta property="article:published_time" content="2020-10-11T15:15:01+09:00">
 
 
 
@@ -305,7 +305,7 @@
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
     
     <meta itemprop="description" content="">
-    <meta itemprop="datePublished" content="2020-09-06T18:03:07+09:00">
+    <meta itemprop="datePublished" content="2020-10-11T15:15:01+09:00">
     
 
     <div class="page__inner-wrap">
@@ -318,7 +318,7 @@
 
 
 
-  1 분 소요
+  2 분 소요
 
 </p>
           
@@ -351,7 +351,7 @@
 
 <p>흔히 프로그램이라 함은 ‘정적’인 상태를 의미한다. 컴파일한 코드와 초기화 전역변수, 문자열과 문자열 상수 등 정적 데이터를 포함한 포괄적인 용어로 실제 운영되는 프로그램은 우리가 <strong>‘프로세스’</strong> 라고 부르는 것이 옳다.</p>
 
-<p>아무쪼록 이 프로세스라는 개념을 도입한 것은 바로, <strong>메모리</strong> 라는 녀석 때문이다. 자료구조라는 학문에서는 얼마나 빠른 시간에 메모리에 적재된 데이터를 CRUD 하는 가에 초점이 맞춰져있다고 한다면, 운영체제 학문에서는 <strong>메모리를 기준으로 프로세스가 어떻게 적절하게 치고 빠지는 가?</strong> 하는 방법에 대해서 서술 하고있다. 이를 위해서는 일단 메모리가 어떤 구조로 이뤄 져있고 어떻게 활용되고 있는지를 확인 할 필요가 있다.</p>
+<p>아무쪼록 이 프로세스라는 개념을 도입한 것은 바로, <strong>메모리</strong> 라는 녀석 때문이다. 자료구조라는 학문에서는 얼마나 빠른 시간에 메모리에 적재된 데이터를 CRUD 하는 가에 초점이 맞춰져있다고 한다면, 운영체제 학문에서는 <strong>메모리를 기준으로 프로세스가 어떻게 적절하게 치고 빠지는 가? 메모리 자원은 얼마나 소비하나?</strong> 하는 방법에 대해서 서술 하고있다. 이를 위해서는 일단 메모리 내의 프로세스가 어떤 구조로  어떻게 활용되고 있는지를 확인 할 필요가 있다.</p>
 
 <p><img src="https://github.com/gwkim9444/gwkim9444.github.io/blob/master/_posts/picture/memory.png?raw=true" alt="Relation" /></p>
 
@@ -419,6 +419,26 @@
   </tbody>
 </table>
 
+<p>이렇게 OS안에서는 많은 종류의 프로세서가 동시에 실행되고 있으며, 이 프로세서들은 앞서 언급된 내용에 의거 <strong>메모리 자원 점유권</strong> 을 두고 치열하게 공방을 펼치고있다.</p>
+
+<p>그리고 이러한 프로세스들의 통제권은 지금 프로그램을 설계할 <strong>당신</strong> 에 설계에 의해 질서 정연하게 움직일 것이다. 이를 위해선 OS 내에서도 나름의 규칙이 있어야 할 것이다. 이를 위해 우리는 프로그램의 총책인 당신에게 프로세스들의 제어권을 줄것이다.</p>
+
+<p>우리는 이러한 제어권을 가진 장부의 프로세스를 PCB(Process Control Block) 이라고 부르며, 이 안에는 특정 프로세스의 정보를 저장해 관리한다. 각 프로세스들은 각자의 상태를 저장한다. 나는 ‘준비’,’대기’,’실행’ 등의 Status를 가지고 있으며, 각 상태들은 전환되는 시점에 따라 ‘dispatch’,’timeout’,’block’,’wakeup’ 등의 용어로 상태전환을 나름의 용어로 불러주고 있다.</p>
+
+<p>이러한 프로세스 컨트롤 블럭에는 프로세스를 구분하는 각기 다른 정보를 내포하고있다.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>1.프로세스 식별자
+2.프로세스 상태
+3.프로그램 카운터
+4.레지스터 저장 영역
+5.프로세서 스케줄링 정보
+6.계정 정보
+7.입출력 상태 정보
+8.메모리 관리 정보
+....
+</code></pre></div></div>
+
+
         
       </section>
 
@@ -428,7 +448,7 @@
 
 
         
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time datetime="2020-09-06T18:03:07+09:00">September 6, 2020</time></p>
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time datetime="2020-10-11T15:15:01+09:00">October 11, 2020</time></p>
 
 
       </footer>
@@ -449,11 +469,12 @@
       
   <nav class="pagination">
     
-      <a href="/gazebo/" class="pagination--pager" title="Gazebo의 구조와 이해
+      <a href="/ros2-ros1/" class="pagination--pager" title="ROS2로 ROS1과 통신하는 방법(브릿지)
 ">이전</a>
     
     
-      <a href="#" class="pagination--pager disabled">다음</a>
+      <a href="/gazebo/" class="pagination--pager" title="Gazebo의 구조와 이해
+">다음</a>
     
   </nav>
 
@@ -467,6 +488,39 @@
     <div class="page__related">
       <h4 class="page__related-title">참고</h4>
       <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="/assets/images/groot.jpeg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/moveit-package/" rel="permalink">Moveit 한글 Package 정리
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  최대 1 분 소요
+
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">
+</p>
+  </article>
+</div>
+
         
           
 

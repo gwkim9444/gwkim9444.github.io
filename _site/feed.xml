@@ -5,8 +5,8 @@
     <description>Node 개발과 ROS/ROS2를 프로젝트에 적용중인 Developer</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 06 Sep 2020 18:03:07 +0900</pubDate>
-    <lastBuildDate>Sun, 06 Sep 2020 18:03:07 +0900</lastBuildDate>
+    <pubDate>Sun, 11 Oct 2020 15:15:01 +0900</pubDate>
+    <lastBuildDate>Sun, 11 Oct 2020 15:15:01 +0900</lastBuildDate>
     <generator>Jekyll v4.1.1</generator>
     
       <item>
@@ -35,7 +35,7 @@
 
 &lt;p&gt;흔히 프로그램이라 함은 ‘정적’인 상태를 의미한다. 컴파일한 코드와 초기화 전역변수, 문자열과 문자열 상수 등 정적 데이터를 포함한 포괄적인 용어로 실제 운영되는 프로그램은 우리가 &lt;strong&gt;‘프로세스’&lt;/strong&gt; 라고 부르는 것이 옳다.&lt;/p&gt;
 
-&lt;p&gt;아무쪼록 이 프로세스라는 개념을 도입한 것은 바로, &lt;strong&gt;메모리&lt;/strong&gt; 라는 녀석 때문이다. 자료구조라는 학문에서는 얼마나 빠른 시간에 메모리에 적재된 데이터를 CRUD 하는 가에 초점이 맞춰져있다고 한다면, 운영체제 학문에서는 &lt;strong&gt;메모리를 기준으로 프로세스가 어떻게 적절하게 치고 빠지는 가?&lt;/strong&gt; 하는 방법에 대해서 서술 하고있다. 이를 위해서는 일단 메모리가 어떤 구조로 이뤄 져있고 어떻게 활용되고 있는지를 확인 할 필요가 있다.&lt;/p&gt;
+&lt;p&gt;아무쪼록 이 프로세스라는 개념을 도입한 것은 바로, &lt;strong&gt;메모리&lt;/strong&gt; 라는 녀석 때문이다. 자료구조라는 학문에서는 얼마나 빠른 시간에 메모리에 적재된 데이터를 CRUD 하는 가에 초점이 맞춰져있다고 한다면, 운영체제 학문에서는 &lt;strong&gt;메모리를 기준으로 프로세스가 어떻게 적절하게 치고 빠지는 가? 메모리 자원은 얼마나 소비하나?&lt;/strong&gt; 하는 방법에 대해서 서술 하고있다. 이를 위해서는 일단 메모리 내의 프로세스가 어떤 구조로  어떻게 활용되고 있는지를 확인 할 필요가 있다.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;https://github.com/gwkim9444/gwkim9444.github.io/blob/master/_posts/picture/memory.png?raw=true&quot; alt=&quot;Relation&quot; /&gt;&lt;/p&gt;
 
@@ -102,10 +102,41 @@
     &lt;/tr&gt;
   &lt;/tbody&gt;
 &lt;/table&gt;
+
+&lt;p&gt;이렇게 OS안에서는 많은 종류의 프로세서가 동시에 실행되고 있으며, 이 프로세서들은 앞서 언급된 내용에 의거 &lt;strong&gt;메모리 자원 점유권&lt;/strong&gt; 을 두고 치열하게 공방을 펼치고있다.&lt;/p&gt;
+
+&lt;p&gt;그리고 이러한 프로세스들의 통제권은 지금 프로그램을 설계할 &lt;strong&gt;당신&lt;/strong&gt; 에 설계에 의해 질서 정연하게 움직일 것이다. 이를 위해선 OS 내에서도 나름의 규칙이 있어야 할 것이다. 이를 위해 우리는 프로그램의 총책인 당신에게 프로세스들의 제어권을 줄것이다.&lt;/p&gt;
+
+&lt;p&gt;우리는 이러한 제어권을 가진 장부의 프로세스를 PCB(Process Control Block) 이라고 부르며, 이 안에는 특정 프로세스의 정보를 저장해 관리한다. 각 프로세스들은 각자의 상태를 저장한다. 나는 ‘준비’,’대기’,’실행’ 등의 Status를 가지고 있으며, 각 상태들은 전환되는 시점에 따라 ‘dispatch’,’timeout’,’block’,’wakeup’ 등의 용어로 상태전환을 나름의 용어로 불러주고 있다.&lt;/p&gt;
+
+&lt;p&gt;이러한 프로세스 컨트롤 블럭에는 프로세스를 구분하는 각기 다른 정보를 내포하고있다.&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;1.프로세스 식별자
+2.프로세스 상태
+3.프로그램 카운터
+4.레지스터 저장 영역
+5.프로세서 스케줄링 정보
+6.계정 정보
+7.입출력 상태 정보
+8.메모리 관리 정보
+....
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
 </description>
-        <pubDate>Sun, 06 Sep 2020 18:03:07 +0900</pubDate>
+        <pubDate>Sun, 11 Oct 2020 15:15:01 +0900</pubDate>
         <link>http://localhost:4000/2020-08-17-linux-vr-oculus-rift-dk2/</link>
         <guid isPermaLink="true">http://localhost:4000/2020-08-17-linux-vr-oculus-rift-dk2/</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>Moveit 한글 Package 정리</title>
+        <description>
+</description>
+        <pubDate>Sun, 11 Oct 2020 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/moveit-package/</link>
+        <guid isPermaLink="true">http://localhost:4000/moveit-package/</guid>
         
         
       </item>
@@ -155,24 +186,29 @@
     &lt;tr&gt;
       &lt;th style=&quot;text-align: center&quot;&gt;영역&lt;/th&gt;
       &lt;th style=&quot;text-align: center&quot;&gt;설명&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;링크&lt;/th&gt;
     &lt;/tr&gt;
   &lt;/thead&gt;
   &lt;tbody&gt;
     &lt;tr&gt;
       &lt;td style=&quot;text-align: center&quot;&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ODE&lt;/code&gt;&lt;/td&gt;
       &lt;td style=&quot;text-align: center&quot;&gt;Open Dynamic Engine으로 공간에서 물체간 동적 상호작용을 시뮬레이션하는데 활용되는 엔진이다.&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
       &lt;td style=&quot;text-align: center&quot;&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Bullet&lt;/code&gt;&lt;/td&gt;
       &lt;td style=&quot;text-align: center&quot;&gt;충돌감지, 강체/연체 물리 시뮬레이션을 위한 2D 전문 물리 엔진이다.  영화의 특수효과 애니메이션 등에도 활용되고있다.&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
       &lt;td style=&quot;text-align: center&quot;&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Simbody&lt;/code&gt;&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;프로그램의 가상 주소공간, 주로 전역변수나 정적변수를 저장하거나 할당하고 실행하기전에 초기화 함&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;생체역학 및 기계 시스템 등에 활용되는 고품격 물체역학 물리 라이브러리이다.&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;https://github.com/simbody&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
       &lt;td style=&quot;text-align: center&quot;&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;DART&lt;/code&gt;&lt;/td&gt;
       &lt;td style=&quot;text-align: center&quot;&gt;실행 영역을 포함하는 메모리이거나 목적파일에 있는 프로그램 영역&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
     &lt;/tr&gt;
   &lt;/tbody&gt;
 &lt;/table&gt;
