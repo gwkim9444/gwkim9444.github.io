@@ -11,12 +11,6 @@ var store = [{
         "url": "http://localhost:4000/ros2-ros1/",
         "teaser": "http://localhost:4000/assets/images/groot.jpeg"
       },{
-        "title": null,
-        "excerpt":"Chapter 03 : 프로세스와 스레드 01. 프로세스의 개념 초기 컴퓨터는 1개의 컴퓨터에 하나의 프로그램이 동작하는 형태의 구조를 가지고있었다. 실행중인 프로그램이 컴퓨터의 모든 자원을 독점하는 이 구조는 불합리하였고, 이를 개선한 다중 프로그래밍 환경에 운영이 가능한 폰 노이만의 하버드 아키텍처(Harvard architecture) 를 채용함으로서 메모리에 여러 프로그램을 적재하는 방식의 컴퓨터 운영방식이 도래하였다. 이에...","categories": [],
-        "tags": null,
-        "url": "http://localhost:4000/2020-08-17-linux-vr-oculus-rift-dk2/",
-        "teaser": "http://localhost:4000/assets/images/groot.jpeg"
-      },{
         "title": "Gazebo의 구조와 이해",
         "excerpt":"Gazebo 의 구조와 이해 Gazebo는 물리시뮬레이션 오픈 소스 프로젝트로서, 대부분 로봇공학자의 필수적인 도구로 활용되고있다. 로봇을 설계하고, 회귀분석과 로봇의 현실적인 시나리오 동작을 가상시뮬레이션을 통해 검증 및 분석하여 사전설계 요소를 검증하거나, 혹은 데이터를 활용한 최근 이슈인 인공지능,빅데이터 와 같은 요소와 접목해 복잡한 실내 및 실외환경에 적합한 물리엔진, 고품격 그래픽과 프로그래밍 인터페이스를 제공한다....","categories": [],
         "tags": [],
@@ -27,5 +21,11 @@ var store = [{
         "excerpt":"Moveit! 정리    Moveit!은 홈페이지에서 다음과 같은 기능을 기술하고있다.      3D 상호 가시화 기능   Gazebo(물리시뮬레이션) 과의 연동   각종 역학적인 동작을 수행하는 기구들의 설정을 도와주는 Setup Assisant Tool   각 기구들의 동작을 수행하는 수행계획과 상호작용의 분석     ","categories": [],
         "tags": [],
         "url": "http://localhost:4000/moveit-package/",
+        "teaser": "http://localhost:4000/assets/images/groot.jpeg"
+      },{
+        "title": null,
+        "excerpt":"Chapter 03 : 프로세스와 스레드 01. 프로세스의 개념 초기 컴퓨터는 1개의 컴퓨터에 하나의 프로그램이 동작하는 형태의 구조를 가지고있었다. 실행중인 프로그램이 컴퓨터의 모든 자원을 독점하는 이 구조는 불합리하였고, 이를 개선한 다중 프로그래밍 환경에 운영이 가능한 폰 노이만의 하버드 아키텍처(Harvard architecture) 를 채용함으로서 메모리에 여러 프로그램을 적재하는 방식의 컴퓨터 운영방식이 도래하였다. 이에...","categories": [],
+        "tags": null,
+        "url": "http://localhost:4000/2020-08-17-linux-vr-oculus-rift-dk2/",
         "teaser": "http://localhost:4000/assets/images/groot.jpeg"
       }]
