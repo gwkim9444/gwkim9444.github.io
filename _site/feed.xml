@@ -5,8 +5,8 @@
     <description>Node 개발과 ROS/ROS2를 프로젝트에 적용중인 Developer</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 11 Oct 2020 15:15:01 +0900</pubDate>
-    <lastBuildDate>Sun, 11 Oct 2020 15:15:01 +0900</lastBuildDate>
+    <pubDate>Sun, 11 Oct 2020 20:03:24 +0900</pubDate>
+    <lastBuildDate>Sun, 11 Oct 2020 20:03:24 +0900</lastBuildDate>
     <generator>Jekyll v4.1.1</generator>
     
       <item>
@@ -123,7 +123,7 @@
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 </description>
-        <pubDate>Sun, 11 Oct 2020 15:15:01 +0900</pubDate>
+        <pubDate>Sun, 11 Oct 2020 20:03:24 +0900</pubDate>
         <link>http://localhost:4000/2020-08-17-linux-vr-oculus-rift-dk2/</link>
         <guid isPermaLink="true">http://localhost:4000/2020-08-17-linux-vr-oculus-rift-dk2/</guid>
         
@@ -132,7 +132,18 @@
     
       <item>
         <title>Moveit 한글 Package 정리</title>
-        <description>
+        <description>&lt;h3 id=&quot;moveit-정리&quot;&gt;Moveit! 정리&lt;/h3&gt;
+&lt;hr /&gt;
+
+&lt;p&gt;Moveit!은 홈페이지에서 다음과 같은 기능을 기술하고있다.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;3D 상호 가시화 기능&lt;/li&gt;
+  &lt;li&gt;Gazebo(물리시뮬레이션) 과의 연동&lt;/li&gt;
+  &lt;li&gt;각종 역학적인 동작을 수행하는 기구들의 설정을 도와주는 Setup Assisant Tool&lt;/li&gt;
+  &lt;li&gt;각 기구들의 동작을 수행하는 수행계획과 상호작용의 분석&lt;/li&gt;
+  &lt;li&gt;&lt;/li&gt;
+&lt;/ol&gt;
 </description>
         <pubDate>Sun, 11 Oct 2020 00:00:00 +0900</pubDate>
         <link>http://localhost:4000/moveit-package/</link>
@@ -212,6 +223,8 @@
     &lt;/tr&gt;
   &lt;/tbody&gt;
 &lt;/table&gt;
+
+&lt;p&gt;###&lt;/p&gt;
 </description>
         <pubDate>Sat, 29 Aug 2020 00:00:00 +0900</pubDate>
         <link>http://localhost:4000/gazebo/</link>

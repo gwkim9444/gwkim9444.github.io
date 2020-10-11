@@ -24,7 +24,7 @@ var store = [{
         "teaser": "http://localhost:4000/assets/images/groot.jpeg"
       },{
         "title": "Moveit 한글 Package 정리",
-        "excerpt":" ","categories": [],
+        "excerpt":"Moveit! 정리    Moveit!은 홈페이지에서 다음과 같은 기능을 기술하고있다.      3D 상호 가시화 기능   Gazebo(물리시뮬레이션) 과의 연동   각종 역학적인 동작을 수행하는 기구들의 설정을 도와주는 Setup Assisant Tool   각 기구들의 동작을 수행하는 수행계획과 상호작용의 분석     ","categories": [],
         "tags": [],
         "url": "http://localhost:4000/moveit-package/",
         "teaser": "http://localhost:4000/assets/images/groot.jpeg"
