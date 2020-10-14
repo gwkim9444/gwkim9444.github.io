@@ -1,0 +1,4 @@
+git remote show origin -n  (completed in 0.011s)
+git log --full-history --pretty=oneline --date-order --decorate=full --skip=0 --max-count=100 master --follow -- _posts/2020-08-29-gazebo.md  (completed in 0.019s)
+git rev-list --full-history --count master -- _posts/2020-08-29-gazebo.md  (completed in 0.025s)
+git shortlog -e -s -n HEAD  (completed in 0.016s)

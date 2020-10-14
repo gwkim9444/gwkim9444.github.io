@@ -1,0 +1,37 @@
+[2020-10-14 11:59:33.752] [sharedprocess] [info] main {"machineId":"ce1a50631e6e86b9fbf755c914563b48c07579b7322437c78081b3bcfb526ba7","windowId":2}
+[2020-10-14 11:59:33.840] [sharedprocess] [error] [File Watcher (node.js)] Error: ENOENT: no such file or directory, stat '/root/git/gwkim9444.github.io/~/.vscode-root/User/snippets'
+[2020-10-14 11:59:35.452] [sharedprocess] [info] Deleted from disk vscodevim.vim /root/.vscode/extensions/vscodevim.vim-1.17.0
+[2020-10-14 11:59:36.991] [sharedprocess] [info] Deleted from disk donjayamanne.githistory /root/.vscode/extensions/donjayamanne.githistory-0.6.9
+[2020-10-14 11:59:37.792] [sharedprocess] [info] Installing extension: donjayamanne.githistory
+[2020-10-14 11:59:37.793] [sharedprocess] [info] Installing extension: ms-python.python
+[2020-10-14 11:59:38.232] [sharedprocess] [info] Deleted from disk redhat.vscode-yaml /root/.vscode/extensions/redhat.vscode-yaml-0.11.0
+[2020-10-14 11:59:38.291] [sharedprocess] [info] Deleted from disk ms-python.python /root/.vscode/extensions/ms-python.python-2020.8.109390
+[2020-10-14 11:59:40.984] [sharedprocess] [info] Downloaded extension: donjayamanne.githistory /root/git/gwkim9444.github.io/~/.vscode-root/CachedExtensionVSIXs/donjayamanne.githistory-0.6.12
+[2020-10-14 11:59:41.068] [sharedprocess] [info] Extracted extension to /root/.vscode/extensions/.donjayamanne.githistory-0.6.12: donjayamanne.githistory
+[2020-10-14 11:59:41.068] [sharedprocess] [info] Renamed to /root/.vscode/extensions/donjayamanne.githistory-0.6.12
+[2020-10-14 11:59:41.069] [sharedprocess] [info] Installation completed. donjayamanne.githistory
+[2020-10-14 11:59:41.160] [sharedprocess] [info] Extensions installed successfully: donjayamanne.githistory
+[2020-10-14 12:00:13.765] [sharedprocess] [info] Starting to clean up unused language packs.
+[2020-10-14 12:00:42.545] [sharedprocess] [info] Downloaded extension: ms-python.python /root/git/gwkim9444.github.io/~/.vscode-root/CachedExtensionVSIXs/ms-python.python-2020.9.114305
+[2020-10-14 12:00:44.760] [sharedprocess] [info] Extracted extension to /root/.vscode/extensions/.ms-python.python-2020.9.114305: ms-python.python
+[2020-10-14 12:00:44.760] [sharedprocess] [info] Renamed to /root/.vscode/extensions/ms-python.python-2020.9.114305
+[2020-10-14 12:00:44.764] [sharedprocess] [info] Installation completed. ms-python.python
+[2020-10-14 12:00:44.909] [sharedprocess] [info] Extensions installed successfully: ms-python.python
+[2020-10-14 12:02:41.561] [sharedprocess] [info] Installing extension: yzhang.markdown-all-in-one
+[2020-10-14 12:02:43.421] [sharedprocess] [info] Installing extension: shd101wyy.markdown-preview-enhanced
+[2020-10-14 12:02:57.821] [sharedprocess] [info] Downloaded extension: yzhang.markdown-all-in-one /root/git/gwkim9444.github.io/~/.vscode-root/CachedExtensionVSIXs/yzhang.markdown-all-in-one-3.3.0
+[2020-10-14 12:02:58.304] [sharedprocess] [info] Extracted extension to /root/.vscode/extensions/.yzhang.markdown-all-in-one-3.3.0: yzhang.markdown-all-in-one
+[2020-10-14 12:02:58.304] [sharedprocess] [info] Renamed to /root/.vscode/extensions/yzhang.markdown-all-in-one-3.3.0
+[2020-10-14 12:02:58.305] [sharedprocess] [info] Installation completed. yzhang.markdown-all-in-one
+[2020-10-14 12:02:58.338] [sharedprocess] [info] Extensions installed successfully: yzhang.markdown-all-in-one
+[2020-10-14 12:03:03.220] [sharedprocess] [info] Installing extension: davidanson.vscode-markdownlint
+[2020-10-14 12:03:10.554] [sharedprocess] [info] Downloaded extension: davidanson.vscode-markdownlint /root/git/gwkim9444.github.io/~/.vscode-root/CachedExtensionVSIXs/davidanson.vscode-markdownlint-0.37.1
+[2020-10-14 12:03:10.638] [sharedprocess] [info] Extracted extension to /root/.vscode/extensions/.davidanson.vscode-markdownlint-0.37.1: davidanson.vscode-markdownlint
+[2020-10-14 12:03:10.638] [sharedprocess] [info] Renamed to /root/.vscode/extensions/davidanson.vscode-markdownlint-0.37.1
+[2020-10-14 12:03:10.644] [sharedprocess] [info] Installation completed. davidanson.vscode-markdownlint
+[2020-10-14 12:03:10.676] [sharedprocess] [info] Extensions installed successfully: davidanson.vscode-markdownlint
+[2020-10-14 12:05:02.118] [sharedprocess] [info] Downloaded extension: shd101wyy.markdown-preview-enhanced /root/git/gwkim9444.github.io/~/.vscode-root/CachedExtensionVSIXs/shd101wyy.markdown-preview-enhanced-0.5.13
+[2020-10-14 12:05:05.137] [sharedprocess] [info] Extracted extension to /root/.vscode/extensions/.shd101wyy.markdown-preview-enhanced-0.5.13: shd101wyy.markdown-preview-enhanced
+[2020-10-14 12:05:05.137] [sharedprocess] [info] Renamed to /root/.vscode/extensions/shd101wyy.markdown-preview-enhanced-0.5.13
+[2020-10-14 12:05:05.139] [sharedprocess] [info] Installation completed. shd101wyy.markdown-preview-enhanced
+[2020-10-14 12:05:05.292] [sharedprocess] [info] Extensions installed successfully: shd101wyy.markdown-preview-enhanced

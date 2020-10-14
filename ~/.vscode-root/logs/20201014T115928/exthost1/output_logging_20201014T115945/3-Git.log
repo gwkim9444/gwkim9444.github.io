@@ -1,0 +1,275 @@
+Looking for git in: git
+Using git 2.7.4 from git
+> git rev-parse --git-dir
+Open repository: /root/git/gwkim9444.github.io
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse master
+> git rev-parse --symbolic-full-name master@{u}
+> git rev-list --left-right master...refs/remotes/origin/master
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname)
+> git remote --verbose
+Warning: Failed to watch ref '/root/git/gwkim9444.github.io/.git/refs/remotes/origin/master', is most likely packed.
+> git config --get commit.template
+> git check-ignore -v -z --stdin
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse master
+> git rev-parse --symbolic-full-name master@{u}
+> git rev-list --left-right master...refs/remotes/origin/master
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname)
+> git remote --verbose
+Warning: Failed to watch ref '/root/git/gwkim9444.github.io/.git/refs/remotes/origin/master', is most likely packed.
+> git config --get commit.template
+> git check-ignore -v -z --stdin
+> git show --textconv :_config.yml
+> git ls-files --stage -- /root/git/gwkim9444.github.io/_config.yml
+> git cat-file -s 8ba99c68e330531dd68034fbc425f0be049902e8
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse master
+> git rev-parse --symbolic-full-name master@{u}
+> git rev-list --left-right master...refs/remotes/origin/master
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname)
+> git remote --verbose
+Warning: Failed to watch ref '/root/git/gwkim9444.github.io/.git/refs/remotes/origin/master', is most likely packed.
+> git config --get commit.template
+> git show --textconv :index.html
+> git ls-files --stage -- /root/git/gwkim9444.github.io/index.html
+> git cat-file -s b95bb1f56f4c436d2f8ee2c8aed91ce69d5a2d0c
+> git check-ignore -v -z --stdin
+> git show --textconv :_posts/2020-07-30-ros1-ros2.md
+> git ls-files --stage -- /root/git/gwkim9444.github.io/_posts/2020-07-30-ros1-ros2.md
+> git cat-file -s c676838bb69aa74dd847a94d45f62d9004388d46
+> git show --textconv :_posts/2020-07-30-ros2-ros1.md
+> git ls-files --stage -- /root/git/gwkim9444.github.io/_posts/2020-07-30-ros2-ros1.md
+> git cat-file -s 5d69d28a5593ab4028c4c7524eb9216dcaa63a5e
+> git check-ignore -v -z --stdin
+> git show --textconv :_posts/2020-08-29-gazebo.md
+> git ls-files --stage -- /root/git/gwkim9444.github.io/_posts/2020-08-29-gazebo.md
+> git cat-file -s ee6c7079fd4c73eee314f1e0b74806c621ff3200
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse master
+> git rev-parse --symbolic-full-name master@{u}
+> git rev-list --left-right master...refs/remotes/origin/master
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname)
+> git remote --verbose
+Warning: Failed to watch ref '/root/git/gwkim9444.github.io/.git/refs/remotes/origin/master', is most likely packed.
+> git config --get commit.template
+> git show --textconv :_posts/2020-08-29-gazebo.md
+> git ls-files --stage -- /root/git/gwkim9444.github.io/_posts/2020-08-29-gazebo.md
+> git cat-file -s ee6c7079fd4c73eee314f1e0b74806c621ff3200
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse master
+> git rev-parse --symbolic-full-name master@{u}
+> git rev-list --left-right master...refs/remotes/origin/master
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname)
+> git remote --verbose
+Warning: Failed to watch ref '/root/git/gwkim9444.github.io/.git/refs/remotes/origin/master', is most likely packed.
+> git config --get commit.template
+> git show --textconv :_posts/2020-08-29-gazebo.md
+> git ls-files --stage -- /root/git/gwkim9444.github.io/_posts/2020-08-29-gazebo.md
+> git cat-file -s ee6c7079fd4c73eee314f1e0b74806c621ff3200
+> git show --textconv :_posts/2020-08-29-gazebo.md
+> git ls-files --stage -- /root/git/gwkim9444.github.io/_posts/2020-08-29-gazebo.md
+> git cat-file -s ee6c7079fd4c73eee314f1e0b74806c621ff3200
+> git log --format=%H%n%aN%n%aE%n%at%n%ct%n%P%n%B -z -n21 -- /root/git/gwkim9444.github.io/_posts/2020-08-29-gazebo.md
+> git show --textconv :_posts/2020-08-29-gazebo.md
+> git ls-files --stage -- /root/git/gwkim9444.github.io/_posts/2020-08-29-gazebo.md
+> git cat-file -s ee6c7079fd4c73eee314f1e0b74806c621ff3200
+> git rev-parse master
+> git rev-parse --symbolic-full-name master@{u}
+> git rev-list --left-right master...refs/remotes/origin/master
+> git rev-parse master
+> git rev-parse --symbolic-full-name master@{u}
+> git rev-list --left-right master...refs/remotes/origin/master
+> git rev-parse master
+> git rev-parse --symbolic-full-name master@{u}
+> git rev-list --left-right master...refs/remotes/origin/master
+> git show --textconv :_posts/2020-10-11-moveit-package.md
+> git ls-files --stage -- /root/git/gwkim9444.github.io/_posts/2020-10-11-moveit-package.md
+> git cat-file -s 8df42078ab7b874c7d9aab64e195673372a5cf23
+> git show --textconv :_posts/2020-08-29-gazebo.md
+> git ls-files --stage -- /root/git/gwkim9444.github.io/_posts/2020-08-29-gazebo.md
+> git cat-file -s ee6c7079fd4c73eee314f1e0b74806c621ff3200
+> git show --textconv :_posts/2020-08-29-gazebo.md
+> git ls-files --stage -- /root/git/gwkim9444.github.io/_posts/2020-08-29-gazebo.md
+> git cat-file -s ee6c7079fd4c73eee314f1e0b74806c621ff3200
+> git show --textconv :_posts/2020-08-29-gazebo.md
+> git ls-files --stage -- /root/git/gwkim9444.github.io/_posts/2020-08-29-gazebo.md
+> git cat-file -s ee6c7079fd4c73eee314f1e0b74806c621ff3200
+> git show --textconv :_posts/2020-07-30-ros2-ros1.md
+> git ls-files --stage -- /root/git/gwkim9444.github.io/_posts/2020-07-30-ros2-ros1.md
+> git cat-file -s 5d69d28a5593ab4028c4c7524eb9216dcaa63a5e
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse master
+> git rev-parse --symbolic-full-name master@{u}
+> git rev-list --left-right master...refs/remotes/origin/master
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname)
+> git remote --verbose
+Warning: Failed to watch ref '/root/git/gwkim9444.github.io/.git/refs/remotes/origin/master', is most likely packed.
+> git config --get commit.template
+> git show --textconv :_posts/2020-08-29-gazebo.md
+> git ls-files --stage -- /root/git/gwkim9444.github.io/_posts/2020-08-29-gazebo.md
+> git cat-file -s ee6c7079fd4c73eee314f1e0b74806c621ff3200
+> git show --textconv :minimal-mistakes-jekyll.gemspec
+> git ls-files --stage -- /root/git/gwkim9444.github.io/minimal-mistakes-jekyll.gemspec
+> git cat-file -s 14d13dd839117ee171d06deb15631ec609cac352
+> git show --textconv :_posts/2020-08-29-gazebo.md
+> git ls-files --stage -- /root/git/gwkim9444.github.io/_posts/2020-08-29-gazebo.md
+> git cat-file -s ee6c7079fd4c73eee314f1e0b74806c621ff3200
+> git show --textconv :_posts/2020-10-11-moveit-package.md
+> git ls-files --stage -- /root/git/gwkim9444.github.io/_posts/2020-10-11-moveit-package.md
+> git cat-file -s 8df42078ab7b874c7d9aab64e195673372a5cf23
+> git check-ignore -v -z --stdin
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse master
+> git rev-parse --symbolic-full-name master@{u}
+> git rev-list --left-right master...refs/remotes/origin/master
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname)
+> git remote --verbose
+Warning: Failed to watch ref '/root/git/gwkim9444.github.io/.git/refs/remotes/origin/master', is most likely packed.
+> git config --get commit.template
+> git show --textconv :_posts/2020-08-29-gazebo.md
+> git ls-files --stage -- /root/git/gwkim9444.github.io/_posts/2020-08-29-gazebo.md
+> git cat-file -s ee6c7079fd4c73eee314f1e0b74806c621ff3200
+> git show --textconv :_posts/2020-10-11-moveit-package.md
+> git ls-files --stage -- /root/git/gwkim9444.github.io/_posts/2020-10-11-moveit-package.md
+> git cat-file -s 8df42078ab7b874c7d9aab64e195673372a5cf23
+> git show --textconv :_posts/2020-08-29-gazebo.md
+> git ls-files --stage -- /root/git/gwkim9444.github.io/_posts/2020-08-29-gazebo.md
+> git cat-file -s ee6c7079fd4c73eee314f1e0b74806c621ff3200
+> git show --textconv :_posts/2020-10-11-moveit-package.md
+> git ls-files --stage -- /root/git/gwkim9444.github.io/_posts/2020-10-11-moveit-package.md
+> git cat-file -s 8df42078ab7b874c7d9aab64e195673372a5cf23
+> git show --textconv :_posts/2020-10-11-moveit-package.md
+> git ls-files --stage -- /root/git/gwkim9444.github.io/_posts/2020-10-11-moveit-package.md
+> git cat-file -s 8df42078ab7b874c7d9aab64e195673372a5cf23
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse master
+> git rev-parse --symbolic-full-name master@{u}
+> git rev-list --left-right master...refs/remotes/origin/master
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname)
+> git remote --verbose
+Warning: Failed to watch ref '/root/git/gwkim9444.github.io/.git/refs/remotes/origin/master', is most likely packed.
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse master
+> git rev-parse --symbolic-full-name master@{u}
+> git rev-list --left-right master...refs/remotes/origin/master
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname)
+> git remote --verbose
+Warning: Failed to watch ref '/root/git/gwkim9444.github.io/.git/refs/remotes/origin/master', is most likely packed.
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse master
+> git rev-parse --symbolic-full-name master@{u}
+> git rev-list --left-right master...refs/remotes/origin/master
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname)
+> git remote --verbose
+Warning: Failed to watch ref '/root/git/gwkim9444.github.io/.git/refs/remotes/origin/master', is most likely packed.
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse master
+> git rev-parse --symbolic-full-name master@{u}
+> git rev-list --left-right master...refs/remotes/origin/master
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname)
+> git remote --verbose
+Warning: Failed to watch ref '/root/git/gwkim9444.github.io/.git/refs/remotes/origin/master', is most likely packed.
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse master
+> git rev-parse --symbolic-full-name master@{u}
+> git rev-list --left-right master...refs/remotes/origin/master
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname)
+> git remote --verbose
+Warning: Failed to watch ref '/root/git/gwkim9444.github.io/.git/refs/remotes/origin/master', is most likely packed.
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse master
+> git rev-parse --symbolic-full-name master@{u}
+> git rev-list --left-right master...refs/remotes/origin/master
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname)
+> git remote --verbose
+Warning: Failed to watch ref '/root/git/gwkim9444.github.io/.git/refs/remotes/origin/master', is most likely packed.
+> git config --get commit.template
+> git check-ignore -v -z --stdin
+> git check-ignore -v -z --stdin
+> git check-ignore -v -z --stdin
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse master
+> git rev-parse --symbolic-full-name master@{u}
+> git rev-list --left-right master...refs/remotes/origin/master
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname)
+> git remote --verbose
+Warning: Failed to watch ref '/root/git/gwkim9444.github.io/.git/refs/remotes/origin/master', is most likely packed.
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse master
+> git rev-parse --symbolic-full-name master@{u}
+> git rev-list --left-right master...refs/remotes/origin/master
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname)
+> git remote --verbose
+Warning: Failed to watch ref '/root/git/gwkim9444.github.io/.git/refs/remotes/origin/master', is most likely packed.
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse master
+> git rev-parse --symbolic-full-name master@{u}
+> git rev-list --left-right master...refs/remotes/origin/master
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname)
+> git remote --verbose
+Warning: Failed to watch ref '/root/git/gwkim9444.github.io/.git/refs/remotes/origin/master', is most likely packed.
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse master
+> git rev-parse --symbolic-full-name master@{u}
+> git rev-list --left-right master...refs/remotes/origin/master
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname)
+> git remote --verbose
+Warning: Failed to watch ref '/root/git/gwkim9444.github.io/.git/refs/remotes/origin/master', is most likely packed.
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse master
+> git rev-parse --symbolic-full-name master@{u}
+> git rev-list --left-right master...refs/remotes/origin/master
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname)
+> git remote --verbose
+Warning: Failed to watch ref '/root/git/gwkim9444.github.io/.git/refs/remotes/origin/master', is most likely packed.
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse master
+> git rev-parse --symbolic-full-name master@{u}
+> git rev-list --left-right master...refs/remotes/origin/master
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname)
+> git remote --verbose
+Warning: Failed to watch ref '/root/git/gwkim9444.github.io/.git/refs/remotes/origin/master', is most likely packed.
+> git config --get commit.template
+> git check-ignore -v -z --stdin
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse master
+> git rev-parse --symbolic-full-name master@{u}
+> git rev-list --left-right master...refs/remotes/origin/master
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname)
+> git remote --verbose
+Warning: Failed to watch ref '/root/git/gwkim9444.github.io/.git/refs/remotes/origin/master', is most likely packed.
+> git config --get commit.template
+> git check-ignore -v -z --stdin
+> git check-ignore -v -z --stdin
+> git check-ignore -v -z --stdin

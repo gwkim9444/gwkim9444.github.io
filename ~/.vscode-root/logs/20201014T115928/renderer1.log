@@ -1,0 +1,63 @@
+[2020-10-14 12:02:04.570] [renderer1] [info] Setting search error: XHR timeout: 5000ms
+[2020-10-14 12:02:04.572] [renderer1] [info] Setting search error: XHR timeout: 5000ms
+[2020-10-14 12:02:09.574] [renderer1] [info] Setting search error: XHR timeout: 5000ms
+[2020-10-14 12:02:09.576] [renderer1] [info] Setting search error: XHR timeout: 5000ms
+[2020-10-14 12:02:14.852] [renderer1] [info] Setting search error: XHR timeout: 5000ms
+[2020-10-14 12:02:14.865] [renderer1] [info] Setting search error: XHR timeout: 5000ms
+[2020-10-14 12:04:30.276] [renderer1] [error] Unknown webview handle:2ce57d20-6e8a-4ddf-97b3-094c97a9e944: Error: Unknown webview handle:2ce57d20-6e8a-4ddf-97b3-094c97a9e944
+    at e.getWebview (file:///usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:4538:235)
+    at e.$postMessage (file:///usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:4537:523)
+    at p._doInvokeHandler (file:///usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:4553:546)
+    at p._invokeHandler (file:///usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:4553:238)
+    at p._receiveRequest (file:///usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:4551:901)
+    at p._receiveOneMessage (file:///usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:4550:729)
+    at file:///usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:4548:836
+    at c.fire (file:///usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:96:67)
+    at fire (file:///usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:452:97)
+    at t.PersistentProtocol._receiveMessage (file:///usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:457:276)
+    at file:///usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:454:243
+    at c.fire (file:///usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:96:67)
+    at g.acceptChunk (file:///usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:449:445)
+    at file:///usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:448:796
+    at Socket.t (file:///usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:458:885)
+    at Socket.emit (events.js:223:5)
+    at addChunk (_stream_readable.js:309:12)
+    at readableAddChunk (_stream_readable.js:290:11)
+    at Socket.Readable.push (_stream_readable.js:224:10)
+    at Pipe.onStreamRead (internal/stream_base_commons.js:181:23)
+[2020-10-14 12:08:33.559] [renderer1] [error] Error: Unable to read file '/root/.vscode/extensions/robodk.industrial-robots-0.1.4/snippets/snippet.comau.json' (EntryNotFound (FileSystemError): Error: ENOENT: no such file or directory, open '/root/.vscode/extensions/robodk.industrial-robots-0.1.4/snippets/snippet.comau.json')
+    at b.doReadAsFileStream (file:///usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:1730:591)
+    at async b.readFile (file:///usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:1729:715)
+    at async a.readExtensionResource (file:///usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:4162:651)
+    at async Promise.all (index 19)
+    at async g.provideCompletionItems (file:///usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:3630:250)
+    at async file:///usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:2082:70
+    at async Object.f [as provideSuggestionItems] (file:///usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:2082:444)
+    at async Promise.all (index 0) file:///root/.vscode/extensions/robodk.industrial-robots-0.1.4/snippets/snippet.comau.json
+[2020-10-14 12:08:33.559] [renderer1] [error] Error: Unable to read file '/root/.vscode/extensions/robodk.industrial-robots-0.1.4/snippets/snippet.kawasaki.json' (EntryNotFound (FileSystemError): Error: ENOENT: no such file or directory, open '/root/.vscode/extensions/robodk.industrial-robots-0.1.4/snippets/snippet.kawasaki.json')
+    at b.doReadAsFileStream (file:///usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:1730:591)
+    at async b.readFile (file:///usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:1729:715)
+    at async a.readExtensionResource (file:///usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:4162:651)
+    at async Promise.all (index 21)
+    at async g.provideCompletionItems (file:///usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:3630:250)
+    at async file:///usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:2082:70
+    at async Object.f [as provideSuggestionItems] (file:///usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:2082:444)
+    at async Promise.all (index 0) file:///root/.vscode/extensions/robodk.industrial-robots-0.1.4/snippets/snippet.kawasaki.json
+[2020-10-14 12:08:33.559] [renderer1] [error] Error: Unable to read file '/root/.vscode/extensions/robodk.industrial-robots-0.1.4/snippets/snippet.staubli.json' (EntryNotFound (FileSystemError): Error: ENOENT: no such file or directory, open '/root/.vscode/extensions/robodk.industrial-robots-0.1.4/snippets/snippet.staubli.json')
+    at b.doReadAsFileStream (file:///usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:1730:591)
+    at async b.readFile (file:///usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:1729:715)
+    at async a.readExtensionResource (file:///usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:4162:651)
+    at async Promise.all (index 24)
+    at async g.provideCompletionItems (file:///usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:3630:250)
+    at async file:///usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:2082:70
+    at async Object.f [as provideSuggestionItems] (file:///usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:2082:444)
+    at async Promise.all (index 0) file:///root/.vscode/extensions/robodk.industrial-robots-0.1.4/snippets/snippet.staubli.json
+[2020-10-14 12:08:33.559] [renderer1] [error] Error: Unable to read file '/root/.vscode/extensions/robodk.industrial-robots-0.1.4/snippets/snippet.universal_robots.json' (EntryNotFound (FileSystemError): Error: ENOENT: no such file or directory, open '/root/.vscode/extensions/robodk.industrial-robots-0.1.4/snippets/snippet.universal_robots.json')
+    at b.doReadAsFileStream (file:///usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:1730:591)
+    at async b.readFile (file:///usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:1729:715)
+    at async a.readExtensionResource (file:///usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:4162:651)
+    at async Promise.all (index 25)
+    at async g.provideCompletionItems (file:///usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:3630:250)
+    at async file:///usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:2082:70
+    at async Object.f [as provideSuggestionItems] (file:///usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:2082:444)
+    at async Promise.all (index 0) file:///root/.vscode/extensions/robodk.industrial-robots-0.1.4/snippets/snippet.universal_robots.json

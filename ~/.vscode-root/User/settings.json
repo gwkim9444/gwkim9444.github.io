@@ -1,0 +1,6 @@
+{
+    "workbench.iconTheme": "vscode-icons",
+    "workbench.colorTheme": "Atom One Dark",
+    "editor.mouseWheelZoom": true,
+    "markdown-preview-enhanced.breakOnSingleNewLine": false
+}
